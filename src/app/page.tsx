@@ -10,7 +10,7 @@ function HeroSection({ className }: DefaultProps) {
       <p className="text-lg sm:text-xl font-sans font-light">
         Ingeniería de alto nivel para proyectos de gran envergadura.
       </p>
-      <span className="material-symbols-outlined mt-6 font-extralight !text-6xl">
+      <span className="material-symbols-outlined mt-6 !font-extralight !text-6xl">
         keyboard_arrow_down
       </span>
     </section>
