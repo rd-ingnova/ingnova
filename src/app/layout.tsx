@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-import { Montserrat, Work_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Playfair_Display, Work_Sans } from "next/font/google";
+import 'material-symbols';
 import "./globals.css";
 import Header from "@/components/header";
 
-const fontDisplay = Montserrat({
+const fontDisplay = Playfair_Display({
   variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
   title: "Ingnova S.A.S",
   description: "Especialistas en ingeniería y rehabilitación estructural",
 };
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
+}
 
 export default function RootLayout({
   children,
