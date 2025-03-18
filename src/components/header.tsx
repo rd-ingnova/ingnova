@@ -4,6 +4,7 @@ import Image from "next/image";
 
 interface HeaderNavPillProps extends DefaultProps {
   label?: string;
+  isActive?: boolean;
   href?: string;
 }
 
@@ -50,6 +51,7 @@ function NavigationMenu({ className }: DefaultProps) {
 
 function NavigationItem({
   label,
+  isActive = false,
   href = "#",
   className,
   children,
@@ -58,7 +60,13 @@ function NavigationItem({
     <div className={clsx("mt-6", className)}>
       {label ? (
         <a
-          className="select-none text-base/loose hocus:font-bold hocus:tracking-tight hocus:cursor-pointer inline-flex items-start py-2 px-6 font-sans font-light hocus:opacity-95"
+          className={clsx(
+            "select-none text-base/loose hocus:font-bold hocus:tracking-tight hocus:cursor-pointer inline-flex items-start py-2 px-6 font-sans hocus:opacity-95",
+            {
+              "font-bold tracking-tight opacity-95": isActive,
+              "font-light": !isActive,
+            }
+          )}
           href={href}
         >
           {label}
@@ -76,7 +84,11 @@ export default function Header() {
       <LogoSection />
       <NavigationMenu />
       <div className="inline-flex items-start justify-end">
-        <NavigationItem className="!hidden sm:!inline-flex" label="Contacto" />
+        <NavigationItem
+          className="!hidden sm:!inline-flex"
+          label="Contacto"
+          isActive={true}
+        />
         <NavigationItem className="!inline-flex !mt-0 !mr-2 sm:!hidden">
           <span className="material-symbols-outlined !text-3xl">menu</span>
         </NavigationItem>

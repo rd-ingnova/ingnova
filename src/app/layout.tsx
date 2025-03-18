@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Work_Sans } from "next/font/google";
+import { Inter, Work_Sans } from "next/font/google";
 import 'material-symbols';
 import "./globals.css";
 import Header from "@/components/header";
 
-const fontDisplay = Playfair_Display({
+const fontDisplay = Inter({
   variable: "--font-display",
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
