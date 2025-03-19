@@ -23,21 +23,25 @@ export default function AboutPage() {
                 Nuestra Historia
               </h2>
               <p className="mb-4 text-gray-700">
-                Fundada en 2010, RD INGNOVA nació con la visión de transformar
-                el sector de la ingeniería en la región, apostando por la
-                innovación y la excelencia técnica como pilares fundamentales.
+                Empresa colombiana joven con la visión de transformar el sector
+                de la ingeniería mediante la integración de innovación,
+                experiencia y un enfoque técnico en cada proyecto. Aunque su
+                trayectoria es reciente, su equipo cuenta con más de 20 años de
+                experiencia en diseño, construcción y rehabilitación de
+                infraestructuras a gran escala.
               </p>
               <p className="mb-4 text-gray-700">
-                Lo que comenzó como un pequeño equipo de ingenieros apasionados,
-                se ha convertido hoy en una empresa reconocida a nivel nacional
-                por la calidad de sus servicios y su compromiso con la
-                sostenibilidad y la mejora continua.
+                La empresa se ha destacado por enfrentar desafíos complejos con
+                soluciones eficientes, utilizando tecnología avanzada y
+                metodologías de vanguardia. Su experiencia incluye proyectos en
+                puentes, cimentaciones, infraestructura vial y rehabilitación
+                estructural.
               </p>
               <p className="text-gray-700">
-                Tras más de una década de crecimiento constante, hemos expandido
-                nuestros servicios y áreas de especialización, manteniéndonos
-                siempre fieles a nuestra filosofía: soluciones de ingeniería que
-                combinan innovación, calidad y responsabilidad.
+                Actualmente, RD INGNOVA sigue expandiéndose y consolidándose
+                como un referente en la ingeniería civil, con el compromiso de
+                desarrollar proyectos que generen un impacto positivo en el
+                desarrollo del país.
               </p>
             </div>
             <div className="relative h-96 rounded-xl overflow-hidden">

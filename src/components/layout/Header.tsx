@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
+import clsx from "clsx";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,21 +44,34 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
-      }`}
+      className={clsx("fixed w-full z-50 transition-all duration-300", {
+        "bg-white shadow-md py-2": isScrolled,
+        "bg-white lg:bg-transparent shadow-md py-2": isMenuOpen && !isScrolled,
+        "bg-transparent py-4": !isScrolled && !isMenuOpen,
+      })}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span
-              className={`text-2xl font-heading font-bold ${
-                isScrolled || isMenuOpen ? "text-primary-700" : "text-white"
-              }`}
-            >
-              RD INGNOVA
-            </span>
+            <Image
+              height={61}
+              width={180}
+              src={
+                isScrolled || isMenuOpen
+                  ? "/logo_primary.png"
+                  : "/logo_secondary.png"
+              }
+              className="lg:hidden"
+              alt="Logo de RD INGNOVA"
+            />
+            <Image
+              height={61}
+              width={180}
+              src={isScrolled ? "/logo_primary.png" : "/logo_secondary.png"}
+              className="hidden lg:block"
+              alt="Logo de RD INGNOVA"
+            />
           </Link>
 
           {/* Navegación escritorio */}
@@ -102,9 +117,7 @@ const Header = () => {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <FaTimes
-                className={isScrolled ? "text-gray-800" : "text-white"}
-              />
+              <FaTimes className="text-gray-800" />
             ) : (
               <FaBars className={isScrolled ? "text-gray-800" : "text-white"} />
             )}

@@ -42,9 +42,9 @@ export default function ContactPage() {
                       Dirección
                     </h3>
                     <p className="text-gray-600">
-                      Av. de la Innovación, 25
+                      Carrera 17B # 81 - 71
                       <br />
-                      28041 Madrid, España
+                      Soledad - Atlántico, Colombia
                     </p>
                   </div>
                 </div>
@@ -58,9 +58,7 @@ export default function ContactPage() {
                       Teléfono
                     </h3>
                     <p className="text-gray-600">
-                      +34 91 234 56 78
-                      <br />
-                      +34 600 123 456
+                      +57 321 301 8486
                     </p>
                   </div>
                 </div>
@@ -74,9 +72,7 @@ export default function ContactPage() {
                       Email
                     </h3>
                     <p className="text-gray-600">
-                      info@rdingnova.com
-                      <br />
-                      proyectos@rdingnova.com
+                      rdingnova@gmail.com
                     </p>
                   </div>
                 </div>

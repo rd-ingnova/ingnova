@@ -63,7 +63,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             </svg>
           </a>
           {service.featured && (
-            <span className="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full">
+            <span className="bg-secondary-100 text-secondary-800 text-xs px-2 py-1 rounded-full">
               Destacado
             </span>
           )}

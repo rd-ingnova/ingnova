@@ -1,37 +1,75 @@
 backend:
   name: git-gateway
-  publish_mode: editorial_workflow
+  branch: main
 
-commit_messages:
-  create: Create {{collection}} “{{slug}}”
-  update: Update {{collection}} “{{slug}}”
-  delete: Delete {{collection}} “{{slug}}”
-  uploadMedia: Upload “{{path}}”
-  deleteMedia: Delete “{{path}}”
-  openAuthoring: "{{message}}"
-
-media_folder: "public/uploads"
-media_library:
-  name: uploadcare
-  config:
-    publicKey: demopublickey
-
-site_url: https://ingnova.netlify.app
-display_url: https://ingnova.netlify.app
-locale: "es"
-show_preview_links: false
-
-slug:
-  encoding: "ascii"
-  sanitize_replacement: "_"
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "service"
-    label: "Service"
-    folder: "_posts/services"
+  - name: "services"
+    label: "Servicios"
+    folder: "content/services"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descripión", name: "description", widget: "text" }
-      - { label: "Imágen", name: "image", widget: "image" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Icono (emoji)", name: "icon", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+      - { label: "Orden", name: "order", widget: "number", default: 1 }
+
+  - name: "projects"
+    label: "Proyectos"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Categoría", name: "category", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Ubicación", name: "location", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+
+  - name: "team"
+    label: "Equipo"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre", name: "name", widget: "string" }
+      - { label: "Cargo", name: "position", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Orden", name: "order", widget: "number", default: 1 }
+      - { label: "Biografía", name: "bio", widget: "text" }
+
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - file: "content/home.md"
+        label: "Página de Inicio"
+        name: "home"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string" }
+          - { label: "Hero Image", name: "heroImage", widget: "image" }
+          - { label: "Services Title", name: "servicesTitle", widget: "string" }
+          - { label: "Services Description", name: "servicesDescription", widget: "string" }
+          - { label: "CTA Title", name: "ctaTitle", widget: "string" }
+          - { label: "CTA Description", name: "ctaDescription", widget: "string" }
+      
+      - file: "content/about.md"
+        label: "Página Sobre Nosotros"
+        name: "about"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string" }
+          - { label: "Hero Image", name: "heroImage", widget: "image" }
+          - { label: "Historia Título", name: "historyTitle", widget: "string" }
+          - { label: "Historia Contenido", name: "historyContent", widget: "markdown" }
+          - { label: "Historia Imagen", name: "historyImage", widget: "image" }
+          - { label: "Valores Título", name: "valuesTitle", widget: "string" }
+          - { label: "Valores Descripción", name: "valuesDescription", widget: "string" }

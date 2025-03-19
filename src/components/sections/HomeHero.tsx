@@ -40,9 +40,10 @@ const HomeHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            En RD INGNOVA transformamos ideas complejas en proyectos exitosos
-            mediante innovación, excelencia técnica y un compromiso total con la
-            sostenibilidad y la calidad.
+            RD INGNOVA combina más de 20 años de experiencia en ingeniería con
+            un enfoque innovador para el desarrollo de proyectos exitosos. Nos
+            especializamos en ofrecer soluciones técnicas avanzadas con un alto
+            compromiso en calidad, sostenibilidad y eficiencia.
           </motion.p>
 
           <motion.div

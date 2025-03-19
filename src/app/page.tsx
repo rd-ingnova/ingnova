@@ -19,8 +19,9 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="mb-4 text-primary-800">Nuestros Servicios</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Ofrecemos soluciones integrales en ingeniería y consultoría para
-              transformar sus proyectos en realidades exitosas.
+              Brindamos servicios especializados en consultoría, construcción y
+              rehabilitación de infraestructuras, respaldados por tecnología de
+              vanguardia y un equipo con amplia experiencia en el sector.
             </p>
           </div>
 
@@ -39,15 +40,15 @@ export default function Home() {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <h3 className="text-4xl font-bold text-white mb-2">+250</h3>
+              <h3 className="text-4xl font-bold text-white mb-2">+5</h3>
               <p className="text-primary-100">Proyectos Completados</p>
             </div>
             <div className="text-center">
-              <h3 className="text-4xl font-bold text-white mb-2">15</h3>
-              <p className="text-primary-100">Años de Experiencia</p>
+              <h3 className="text-4xl font-bold text-white mb-2">+20</h3>
+              <p className="text-primary-100">Años de Experiencia de Personal</p>
             </div>
             <div className="text-center">
-              <h3 className="text-4xl font-bold text-white mb-2">+100</h3>
+              <h3 className="text-4xl font-bold text-white mb-2">+5</h3>
               <p className="text-primary-100">Clientes Satisfechos</p>
             </div>
             <div className="text-center">
@@ -67,8 +68,9 @@ export default function Home() {
                 ¿Listo para llevar tu proyecto al siguiente nivel?
               </h2>
               <p className="text-gray-600">
-                Contáctanos hoy para recibir asesoramiento personalizado de
-                nuestro equipo de expertos.
+                Estamos listos para asesorarte en tu próximo proyecto.
+                Escríbenos y nuestro equipo de expertos te brindará soluciones
+                adaptadas a tus necesidades.
               </p>
             </div>
             <div>
