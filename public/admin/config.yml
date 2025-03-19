@@ -1,6 +1,23 @@
 backend:
   name: git-gateway
-  branch: main
+  publish_mode: editorial_workflow
+
+commit_messages:
+  create: Create {{collection}} “{{slug}}”
+  update: Update {{collection}} “{{slug}}”
+  delete: Delete {{collection}} “{{slug}}”
+  uploadMedia: Upload “{{path}}”
+  deleteMedia: Delete “{{path}}”
+  openAuthoring: "{{message}}"
+
+site_url: https://ingnova.netlify.app
+display_url: https://ingnova.netlify.app
+locale: "es"
+show_preview_links: false
+
+slug:
+  encoding: "ascii"
+  sanitize_replacement: "_"
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -16,7 +33,12 @@ collections:
       - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Icono (emoji)", name: "icon", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+      - {
+          label: "Destacado",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+        }
       - { label: "Contenido", name: "body", widget: "markdown" }
       - { label: "Orden", name: "order", widget: "number", default: 1 }
 
@@ -57,10 +79,18 @@ collections:
           - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string" }
           - { label: "Hero Image", name: "heroImage", widget: "image" }
           - { label: "Services Title", name: "servicesTitle", widget: "string" }
-          - { label: "Services Description", name: "servicesDescription", widget: "string" }
+          - {
+              label: "Services Description",
+              name: "servicesDescription",
+              widget: "string",
+            }
           - { label: "CTA Title", name: "ctaTitle", widget: "string" }
-          - { label: "CTA Description", name: "ctaDescription", widget: "string" }
-      
+          - {
+              label: "CTA Description",
+              name: "ctaDescription",
+              widget: "string",
+            }
+
       - file: "content/about.md"
         label: "Página Sobre Nosotros"
         name: "about"
@@ -69,7 +99,15 @@ collections:
           - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string" }
           - { label: "Hero Image", name: "heroImage", widget: "image" }
           - { label: "Historia Título", name: "historyTitle", widget: "string" }
-          - { label: "Historia Contenido", name: "historyContent", widget: "markdown" }
+          - {
+              label: "Historia Contenido",
+              name: "historyContent",
+              widget: "markdown",
+            }
           - { label: "Historia Imagen", name: "historyImage", widget: "image" }
           - { label: "Valores Título", name: "valuesTitle", widget: "string" }
-          - { label: "Valores Descripción", name: "valuesDescription", widget: "string" }
+          - {
+              label: "Valores Descripción",
+              name: "valuesDescription",
+              widget: "string",
+            }
