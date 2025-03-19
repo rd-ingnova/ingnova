@@ -1,42 +1,52 @@
-import type { Metadata, Viewport } from "next";
-import { Inter, Work_Sans } from "next/font/google";
-import 'material-symbols';
-import "./globals.css";
-import Header from "@/components/header";
+import type { Metadata } from 'next';
+import { Inter, Montserrat } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/layout/Header';
 
-const fontDisplay = Inter({
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
 });
 
-const fontSans = Work_Sans({
-  variable: "--font-sans",
-  weight: ["300", "400", "500", "600"],
-  subsets: ["latin"],
+const montserrat = Montserrat({ 
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Ingnova S.A.S",
-  description: "Especialistas en ingeniería y rehabilitación estructural",
+  title: 'RD INGNOVA | Ingeniería y Consultoría',
+  description: 'Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.',
+  keywords: 'ingeniería, consultoría, construcción, rehabilitación, proyectos, infraestructura',
+  openGraph: {
+    title: 'RD INGNOVA | Ingeniería y Consultoría',
+    description: 'Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.',
+    siteName: 'RD INGNOVA',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'RD INGNOVA - Ingeniería y Consultoría',
+      },
+    ],
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
-
-export const viewport: Viewport = {
-  viewportFit: "cover",
-}
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="es">
-      <body
-        className={`${fontDisplay.variable} ${fontSans.variable} antialiased`}
-      >
+    <html lang="es" className={`${inter.variable} ${montserrat.variable}`}>
+      <body className="flex flex-col min-h-screen">
         <Header />
-        <main>{children}</main>
+        <main className="flex-grow">{children}</main>
+        {/* <Footer /> */}
       </body>
     </html>
   );
