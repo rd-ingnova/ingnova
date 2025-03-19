@@ -1,15 +1,15 @@
 backend:
   name: git-gateway
   publish_mode: editorial_workflow
-  
+
 commit_messages:
   create: Create {{collection}} “{{slug}}”
   update: Update {{collection}} “{{slug}}”
   delete: Delete {{collection}} “{{slug}}”
   uploadMedia: Upload “{{path}}”
   deleteMedia: Delete “{{path}}”
-  openAuthoring: '{{message}}'
-  
+  openAuthoring: "{{message}}"
+
 media_folder: "public/uploads"
 media_library:
   name: uploadcare
@@ -18,7 +18,7 @@ media_library:
 
 site_url: https://ingnova.netlify.app
 display_url: https://ingnova.netlify.app
-locale: 'es'
+locale: "es"
 show_preview_links: false
 
 slug:
@@ -32,6 +32,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-    - {label: "Título", name: "title", widget: "string"}
-    - {label: "Descripión", name: "description", widget: "text"}
-    - {label: "Imágen", name: "image", widget: "image"}
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripión", name: "description", widget: "text" }
+      - { label: "Imágen", name: "image", widget: "image" }
