@@ -109,14 +109,14 @@ const Footer = () => {
               <li className="flex items-start">
                 <FaMapMarkerAlt className="text-primary-400 mt-1 mr-3 flex-shrink-0" />
                 <span className="text-primary-100">
-                  Av. de la Innovación, 25
+                  Carrera 17B # 81 - 71
                   <br />
-                  28041 Madrid, España
+                  Soledad - Atlántico, Colombia
                 </span>
               </li>
               <li className="flex items-center">
                 <FaPhone className="text-primary-400 mr-3 flex-shrink-0" />
-                <span className="text-primary-100">+34 91 234 56 78</span>
+                <span className="text-primary-100">+57 321 301 8486</span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="text-primary-400 mr-3 flex-shrink-0" />
@@ -124,7 +124,7 @@ const Footer = () => {
                   href="mailto:info@rdingnova.com"
                   className="text-primary-100 hover:text-white transition-colors"
                 >
-                  info@rdingnova.com
+                  rdingnova@gmail.com
                 </a>
               </li>
             </ul>
