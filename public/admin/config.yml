@@ -35,7 +35,12 @@ collections:
       - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Ícono", name: "icon", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+      - {
+          label: "Destacado",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+        }
       - { label: "Contenido", name: "body", widget: "markdown" }
       - { label: "Orden", name: "order", widget: "number", default: 1 }
 
@@ -66,6 +71,49 @@ collections:
       - { label: "Testimonio", name: "testimonial", widget: "text" }
       - { label: "Imagen", name: "image", widget: "image" }
 
+  # Stats - Home (Multiple entries)
+  - name: "stats"
+    label: "Estadísticas"
+    folder: "content/stats"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Número", name: "number", widget: "string" }
+      - { label: "Etiqueta", name: "label", widget: "string" }
+
+  # Values - About (Multiple entries)
+  - name: "values"
+    label: "Valores"
+    folder: "content/values"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Ícono", name: "icon", widget: "string" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+
+  # Team - About (Multiple entries)
+  - name: "team"
+    label: "Equipo"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre", name: "name", widget: "string" }
+      - { label: "Cargo", name: "position", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Biografía", name: "bio", widget: "text", required: false }
+
+  # FAQs - Contact (Multiple entries)
+  - name: "faqs"
+    label: "Preguntas Frecuentes"
+    folder: "content/faqs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Pregunta", name: "question", widget: "string" }
+      - { label: "Respuesta", name: "answer", widget: "text" }
+
   # Pages (file collections)
   - name: "pages"
     label: "Páginas"
@@ -78,18 +126,33 @@ collections:
           - { label: "Hero Título", name: "heroTitle", widget: "string" }
           - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
           - { label: "Hero Imagen", name: "heroImage", widget: "image" }
-          - { label: "Servicios Título", name: "servicesTitle", widget: "string" }
-          - { label: "Servicios Descripción", name: "servicesDescription", widget: "string" }
+          - {
+              label: "Servicios Título",
+              name: "servicesTitle",
+              widget: "string",
+            }
+          - {
+              label: "Servicios Descripción",
+              name: "servicesDescription",
+              widget: "string",
+            }
           - { label: "CTA Título", name: "ctaTitle", widget: "string" }
-          - { label: "CTA Descripción", name: "ctaDescription", widget: "string" }
+          - {
+              label: "CTA Descripción",
+              name: "ctaDescription",
+              widget: "string",
+            }
           - { label: "CTA Botón", name: "ctaButton", widget: "string" }
-          - label: "Estadísticas"
-            name: "stats"
-            widget: "list"
-            fields:
-              - { label: "Número", name: "number", widget: "string" }
-              - { label: "Etiqueta", name: "label", widget: "string" }
-      
+          - {
+              label: "Estadísticas",
+              name: "statsItems",
+              widget: "relation",
+              collection: "stats",
+              search_fields: ["label"],
+              value_field: "{{slug}}",
+              multiple: true,
+            }
+
       - file: "content/about.md"
         label: "Página Sobre Nosotros"
         name: "about"
@@ -97,28 +160,38 @@ collections:
           - { label: "Hero Fondo", name: "heroBg", widget: "image" }
           - { label: "Hero Título", name: "heroTitle", widget: "string" }
           - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-          - { label: "Hero Imagen", name: "heroImage", widget: "image" }
           - { label: "Historia Título", name: "historyTitle", widget: "string" }
-          - { label: "Historia Contenido", name: "historyContent", widget: "markdown" }
+          - {
+              label: "Historia Contenido",
+              name: "historyContent",
+              widget: "markdown",
+            }
           - { label: "Historia Imagen", name: "historyImage", widget: "image" }
           - { label: "Valores Título", name: "valuesTitle", widget: "string" }
-          - { label: "Valores Descripción", name: "valuesDescription", widget: "string" }
-          - label: "Valores"
-            name: "values"
-            widget: "list"
-            fields:
-              - { label: "Ícono", name: "icon", widget: "string" }
-              - { label: "Título", name: "title", widget: "string" }
-              - { label: "Descripción", name: "description", widget: "text" }
-          - label: "Equipo"
-            name: "team"
-            widget: "list"
-            fields:
-              - { label: "Nombre", name: "name", widget: "string" }
-              - { label: "Cargo", name: "position", widget: "string" }
-              - { label: "Imagen", name: "image", widget: "image" }
-              - { label: "Biografía", name: "bio", widget: "text", required: false }
-      
+          - {
+              label: "Valores Descripción",
+              name: "valuesDescription",
+              widget: "string",
+            }
+          - {
+              label: "Valores",
+              name: "valueItems",
+              widget: "relation",
+              collection: "values",
+              search_fields: ["title"],
+              value_field: "{{slug}}",
+              multiple: true,
+            }
+          - {
+              label: "Equipo",
+              name: "teamMembers",
+              widget: "relation",
+              collection: "team",
+              search_fields: ["name"],
+              value_field: "{{slug}}",
+              multiple: true,
+            }
+
       - file: "content/contact.md"
         label: "Contacto"
         name: "contact"
@@ -131,9 +204,12 @@ collections:
           - { label: "Teléfono", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Horario", name: "schedule", widget: "string" }
-          - label: "FAQs"
-            name: "faqs"
-            widget: "list"
-            fields:
-              - { label: "Pregunta", name: "question", widget: "string" }
-              - { label: "Respuesta", name: "answer", widget: "text" }
+          - {
+              label: "FAQs",
+              name: "faqItems",
+              widget: "relation",
+              collection: "faqs",
+              search_fields: ["question"],
+              value_field: "{{slug}}",
+              multiple: true,
+            }

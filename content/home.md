@@ -5,7 +5,6 @@ heroSubtitle: RD INGNOVA combina más de 20 años de experiencia en ingeniería 
   un enfoque innovador para el desarrollo de proyectos exitosos. Nos
   especializamos en ofrecer soluciones técnicas avanzadas con un alto compromiso
   en calidad, sostenibilidad y eficiencia.
-heroImage: /images/uploads/hero_img.jpg
 servicesTitle: Nuestros Servicios
 servicesDescription: Brindamos servicios especializados en consultoría,
   construcción y rehabilitación de infraestructuras, respaldados por tecnología
