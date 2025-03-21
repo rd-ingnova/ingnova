@@ -14,13 +14,4 @@ ctaDescription: Estamos listos para asesorarte en tu próximo proyecto.
   Escríbenos y nuestro equipo de expertos te brindará soluciones adaptadas a tus
   necesidades.
 ctaButton: Contáctanos ahora
-stats:
-  - number: "+5"
-    label: Proyectos Completados
-  - number: "+20"
-    label: Años de Experiencia de Personal
-  - number: Muchos
-    label: Clientes Satisfechos
-  - number: "25"
-    label: Profesionales
 ---
