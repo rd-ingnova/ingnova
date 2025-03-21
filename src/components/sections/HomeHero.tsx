@@ -6,14 +6,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
+import { MarkupData } from "@/lib/utils";
 
-const HomeHero = () => {
+const HomeHero: React.FC<MarkupData> = ({ content, data }) => {
   return (
     <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Imagen de fondo con overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
+          // src={data.heroBg}
           alt="RD INGNOVA - Ingeniería y Consultoría"
           fill
           priority
@@ -31,7 +33,7 @@ const HomeHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            Soluciones de ingeniería para el futuro
+            {data.heroTitle}
           </motion.h1>
 
           <motion.p
@@ -40,10 +42,7 @@ const HomeHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            RD INGNOVA combina más de 20 años de experiencia en ingeniería con
-            un enfoque innovador para el desarrollo de proyectos exitosos. Nos
-            especializamos en ofrecer soluciones técnicas avanzadas con un alto
-            compromiso en calidad, sostenibilidad y eficiencia.
+            {data.heroSubtitle}
           </motion.p>
 
           <motion.div
@@ -71,11 +70,11 @@ const HomeHero = () => {
       {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
+        initial={{ opacity: 1 }}
+        animate={{ opacity: [1, 0, 1], y: [0, 10, 0] }}
         transition={{ duration: 1.5, delay: 1, repeat: Infinity }}
       >
-        <FaChevronDown size={36} className="text-white" />
+        <FaChevronDown size={30} className="text-white" />
       </motion.div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import HomeHero from "@/components/sections/HomeHero";
 import ServicesGrid from "@/components/sections/ServicesGrid";
+import { getMarkup } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "RD INGNOVA | Ingeniería y Consultoría",
@@ -9,9 +10,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const markup = getMarkup("/content", "home.md");
+  if (!markup) return null;
+  const { content, data } = markup;
+
   return (
     <>
-      <HomeHero />
+      <HomeHero {...markup} />
 
       {/* Sección de servicios destacados */}
       <section className="section bg-gray-50">
@@ -45,7 +50,9 @@ export default function Home() {
             </div>
             <div className="text-center">
               <h3 className="text-4xl font-bold text-white mb-2">+20</h3>
-              <p className="text-primary-100">Años de Experiencia de Personal</p>
+              <p className="text-primary-100">
+                Años de Experiencia de Personal
+              </p>
             </div>
             <div className="text-center">
               <h3 className="text-4xl font-bold text-white mb-2">+5</h3>

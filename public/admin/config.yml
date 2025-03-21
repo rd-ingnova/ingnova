@@ -192,6 +192,60 @@ collections:
               multiple: true,
             }
 
+      - file: "content/services.md"
+        label: "Página Servicios"
+        name: "services"
+        fields:
+          - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+          - { label: "Hero Título", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+          - {
+              label: "Servicios Título",
+              name: "servicesTitle",
+              widget: "string",
+            }
+          - {
+              label: "Servicios Contenido",
+              name: "servicesContent",
+              widget: "markdown",
+            }
+          - {
+              label: "Servicios",
+              name: "servicesItems",
+              widget: "relation",
+              collection: "services",
+              search_fields: ["title"],
+              value_field: "{{slug}}",
+              multiple: true,
+            }
+
+      - file: "content/projects.md"
+        label: "Página Proyectos"
+        name: "services"
+        fields:
+          - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+          - { label: "Hero Título", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+          - {
+              label: "Proyectos Título",
+              name: "projectsTitle",
+              widget: "string",
+            }
+          - {
+              label: "Proyectos Contenido",
+              name: "projectsContent",
+              widget: "markdown",
+            }
+          - {
+              label: "Proyectos",
+              name: "projectsItems",
+              widget: "relation",
+              collection: "projects",
+              search_fields: ["title"],
+              value_field: "{{slug}}",
+              multiple: true,
+            }
+
       - file: "content/contact.md"
         label: "Contacto"
         name: "contact"
