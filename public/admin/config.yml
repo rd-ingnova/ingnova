@@ -1,3 +1,5 @@
+local_backend: true # set to true to allow decap cms to save file locally during development
+
 backend:
   name: git-gateway
   publish_mode: editorial_workflow
@@ -23,7 +25,7 @@ media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  # 🏠 Home Page
+  # 🏠 Home Page (Single file)
   - name: "home"
     label: "Página de Inicio"
     file: "content/home.md"
@@ -43,7 +45,7 @@ collections:
       - { label: "CTA Descripción", name: "ctaDescription", widget: "string" }
       - { label: "CTA Botón", name: "ctaButton", widget: "string" }
 
-  # 📌 About Us Page
+  # 📌 About Us Page (Single file)
   - name: "about"
     label: "Página Sobre Nosotros"
     file: "content/about.md"
@@ -69,63 +71,36 @@ collections:
           - { label: "Imagen", name: "image", widget: "image" }
           - { label: "Biografía", name: "bio", widget: "text", required: false }
 
-  # 🛠️ Services Page
+  # 🛠️ Services Page (Multiple entries)
   - name: "services"
     label: "Servicios"
     folder: "content/services"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
-      - { label: "Hero Título", name: "heroTitle", widget: "string" }
-      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-      - label: "Servicios"
-        name: "services"
-        widget: "list"
-        fields:
-          - { label: "Título", name: "title", widget: "string" }
-          - { label: "Descripción", name: "description", widget: "text" }
-          - { label: "Ícono", name: "icon", widget: "string" }
-          - { label: "Imagen", name: "image", widget: "image" }
-          - {
-              label: "Destacado",
-              name: "featured",
-              widget: "boolean",
-              default: false,
-            }
-          - { label: "Contenido", name: "body", widget: "markdown" }
-      - label: "Metodología"
-        name: "methodology"
-        widget: "list"
-        fields:
-          - { label: "Imagen", name: "image", widget: "image" }
-          - { label: "Título", name: "title", widget: "string" }
-          - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "CTA Título", name: "ctaTitle", widget: "string" }
-      - { label: "CTA Descripción", name: "ctaDescription", widget: "string" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Ícono", name: "icon", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
 
-  # 🏗️ Projects Page
+  # 🏗️ Projects Page (Multiple entries)
   - name: "projects"
     label: "Proyectos"
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
-      - { label: "Hero Título", name: "heroTitle", widget: "string" }
-      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-      - label: "Proyectos"
-        name: "projects"
-        widget: "list"
-        fields:
-          - { label: "Título", name: "title", widget: "string" }
-          - { label: "Categoría", name: "category", widget: "string" }
-          - { label: "Descripción", name: "description", widget: "text" }
-          - { label: "Imagen", name: "image", widget: "image" }
-          - { label: "Ubicación", name: "location", widget: "string" }
-          - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Categoría", name: "category", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Ubicación", name: "location", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
 
-  # 📞 Contact Page
+  # 📞 Contact Page (Single file)
   - name: "contact"
     label: "Contacto"
     file: "content/contact.md"
@@ -145,7 +120,7 @@ collections:
           - { label: "Pregunta", name: "question", widget: "string" }
           - { label: "Respuesta", name: "answer", widget: "text" }
 
-  # 🌟 Testimonials
+  # 🌟 Testimonials (Multiple entries)
   - name: "testimonials"
     label: "Testimonios"
     folder: "content/testimonials"
@@ -156,3 +131,4 @@ collections:
       - { label: "Cargo", name: "position", widget: "string" }
       - { label: "Testimonio", name: "testimonial", widget: "text" }
       - { label: "Imagen", name: "image", widget: "image" }
+
