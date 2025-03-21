@@ -52,7 +52,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo Móvil */}
           <Link href="/" className="flex items-center">
             <Image
               height={61}
@@ -65,6 +65,7 @@ const Header = () => {
               className="lg:hidden"
               alt="Logo de RD INGNOVA"
             />
+            {/* Logo Desktop */}
             <Image
               height={61}
               width={180}
@@ -133,7 +134,7 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white"
+            className="lg:hidden"
           >
             <div className="container mx-auto px-4 py-6 space-y-4">
               {navLinks.map((link) => (

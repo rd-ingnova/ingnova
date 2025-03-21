@@ -23,91 +23,136 @@ media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  # 🏠 Home Page
+  - name: "home"
+    label: "Página de Inicio"
+    file: "content/home.md"
+    fields:
+      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+      - { label: "Hero Título", name: "heroTitle", widget: "string" }
+      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+      - { label: "CTA Texto 1", name: "heroCta1", widget: "string" }
+      - { label: "CTA Texto 2", name: "heroCta2", widget: "string" }
+      - label: "Estadísticas"
+        name: "stats"
+        widget: "list"
+        fields:
+          - { label: "Número", name: "number", widget: "string" }
+          - { label: "Etiqueta", name: "label", widget: "string" }
+      - { label: "CTA Sección Título", name: "ctaTitle", widget: "string" }
+      - { label: "CTA Descripción", name: "ctaDescription", widget: "string" }
+      - { label: "CTA Botón", name: "ctaButton", widget: "string" }
+
+  # 📌 About Us Page
+  - name: "about"
+    label: "Página Sobre Nosotros"
+    file: "content/about.md"
+    fields:
+      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+      - { label: "Hero Título", name: "heroTitle", widget: "string" }
+      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+      - { label: "Historia", name: "history", widget: "markdown" }
+      - { label: "Imagen de Historia", name: "historyImage", widget: "image" }
+      - label: "Valores"
+        name: "values"
+        widget: "list"
+        fields:
+          - { label: "Ícono", name: "icon", widget: "string" }
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Descripción", name: "description", widget: "text" }
+      - label: "Equipo"
+        name: "team"
+        widget: "list"
+        fields:
+          - { label: "Nombre", name: "name", widget: "string" }
+          - { label: "Cargo", name: "position", widget: "string" }
+          - { label: "Imagen", name: "image", widget: "image" }
+          - { label: "Biografía", name: "bio", widget: "text", required: false }
+
+  # 🛠️ Services Page
   - name: "services"
     label: "Servicios"
     folder: "content/services"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Icono (emoji)", name: "icon", widget: "string" }
-      - { label: "Imagen", name: "image", widget: "image" }
-      - {
-          label: "Destacado",
-          name: "featured",
-          widget: "boolean",
-          default: false,
-        }
-      - { label: "Contenido", name: "body", widget: "markdown" }
-      - { label: "Orden", name: "order", widget: "number", default: 1 }
+      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+      - { label: "Hero Título", name: "heroTitle", widget: "string" }
+      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+      - label: "Servicios"
+        name: "services"
+        widget: "list"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Descripción", name: "description", widget: "text" }
+          - { label: "Ícono", name: "icon", widget: "string" }
+          - { label: "Imagen", name: "image", widget: "image" }
+          - {
+              label: "Destacado",
+              name: "featured",
+              widget: "boolean",
+              default: false,
+            }
+          - { label: "Contenido", name: "body", widget: "markdown" }
+      - label: "Metodología"
+        name: "methodology"
+        widget: "list"
+        fields:
+          - { label: "Imagen", name: "image", widget: "image" }
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "CTA Título", name: "ctaTitle", widget: "string" }
+      - { label: "CTA Descripción", name: "ctaDescription", widget: "string" }
 
+  # 🏗️ Projects Page
   - name: "projects"
     label: "Proyectos"
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Categoría", name: "category", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "Ubicación", name: "location", widget: "string" }
-      - { label: "Contenido", name: "body", widget: "markdown" }
-      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+      - { label: "Hero Título", name: "heroTitle", widget: "string" }
+      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+      - label: "Proyectos"
+        name: "projects"
+        widget: "list"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Categoría", name: "category", widget: "string" }
+          - { label: "Descripción", name: "description", widget: "text" }
+          - { label: "Imagen", name: "image", widget: "image" }
+          - { label: "Ubicación", name: "location", widget: "string" }
+          - { label: "Fecha", name: "date", widget: "datetime" }
 
-  - name: "team"
-    label: "Equipo"
-    folder: "content/team"
+  # 📞 Contact Page
+  - name: "contact"
+    label: "Contacto"
+    file: "content/contact.md"
+    fields:
+      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+      - { label: "Hero Título", name: "heroTitle", widget: "string" }
+      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Dirección", name: "address", widget: "string" }
+      - { label: "Teléfono", name: "phone", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Horario", name: "schedule", widget: "string" }
+      - label: "FAQs"
+        name: "faqs"
+        widget: "list"
+        fields:
+          - { label: "Pregunta", name: "question", widget: "string" }
+          - { label: "Respuesta", name: "answer", widget: "text" }
+
+  # 🌟 Testimonials
+  - name: "testimonials"
+    label: "Testimonios"
+    folder: "content/testimonials"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Nombre", name: "name", widget: "string" }
       - { label: "Cargo", name: "position", widget: "string" }
+      - { label: "Testimonio", name: "testimonial", widget: "text" }
       - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "Orden", name: "order", widget: "number", default: 1 }
-      - { label: "Biografía", name: "bio", widget: "text" }
-
-  - name: "pages"
-    label: "Páginas"
-    files:
-      - file: "content/home.md"
-        label: "Página de Inicio"
-        name: "home"
-        fields:
-          - { label: "Hero Title", name: "heroTitle", widget: "string" }
-          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string" }
-          - { label: "Hero Image", name: "heroImage", widget: "image" }
-          - { label: "Services Title", name: "servicesTitle", widget: "string" }
-          - {
-              label: "Services Description",
-              name: "servicesDescription",
-              widget: "string",
-            }
-          - { label: "CTA Title", name: "ctaTitle", widget: "string" }
-          - {
-              label: "CTA Description",
-              name: "ctaDescription",
-              widget: "string",
-            }
-
-      - file: "content/about.md"
-        label: "Página Sobre Nosotros"
-        name: "about"
-        fields:
-          - { label: "Hero Title", name: "heroTitle", widget: "string" }
-          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string" }
-          - { label: "Hero Image", name: "heroImage", widget: "image" }
-          - { label: "Historia Título", name: "historyTitle", widget: "string" }
-          - {
-              label: "Historia Contenido",
-              name: "historyContent",
-              widget: "markdown",
-            }
-          - { label: "Historia Imagen", name: "historyImage", widget: "image" }
-          - { label: "Valores Título", name: "valuesTitle", widget: "string" }
-          - {
-              label: "Valores Descripción",
-              name: "valuesDescription",
-              widget: "string",
-            }
