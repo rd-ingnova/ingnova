@@ -221,7 +221,7 @@ collections:
 
       - file: "content/projects.md"
         label: "Página Proyectos"
-        name: "services"
+        name: "projects"
         fields:
           - { label: "Hero Fondo", name: "heroBg", widget: "image" }
           - { label: "Hero Título", name: "heroTitle", widget: "string" }
