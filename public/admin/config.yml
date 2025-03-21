@@ -1,15 +1,14 @@
-local_backend: true # set to true to allow decap cms to save file locally during development
-
 backend:
   name: git-gateway
+  branch: main
   publish_mode: editorial_workflow
 
 commit_messages:
-  create: Create {{collection}} “{{slug}}”
-  update: Update {{collection}} “{{slug}}”
-  delete: Delete {{collection}} “{{slug}}”
-  uploadMedia: Upload “{{path}}”
-  deleteMedia: Delete “{{path}}”
+  create: Create {{collection}} "{{slug}}"
+  update: Update {{collection}} "{{slug}}"
+  delete: Delete {{collection}} "{{slug}}"
+  uploadMedia: Upload "{{path}}"
+  deleteMedia: Delete "{{path}}"
   openAuthoring: "{{message}}"
 
 site_url: https://ingnova.netlify.app
@@ -25,52 +24,6 @@ media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  # 🏠 Home Page (Single file)
-  - name: "home"
-    label: "Página de Inicio"
-    file: "content/home.md"
-    fields:
-      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
-      - { label: "Hero Título", name: "heroTitle", widget: "string" }
-      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-      - { label: "CTA Texto 1", name: "heroCta1", widget: "string" }
-      - { label: "CTA Texto 2", name: "heroCta2", widget: "string" }
-      - label: "Estadísticas"
-        name: "stats"
-        widget: "list"
-        fields:
-          - { label: "Número", name: "number", widget: "string" }
-          - { label: "Etiqueta", name: "label", widget: "string" }
-      - { label: "CTA Sección Título", name: "ctaTitle", widget: "string" }
-      - { label: "CTA Descripción", name: "ctaDescription", widget: "string" }
-      - { label: "CTA Botón", name: "ctaButton", widget: "string" }
-
-  # 📌 About Us Page (Single file)
-  - name: "about"
-    label: "Página Sobre Nosotros"
-    file: "content/about.md"
-    fields:
-      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
-      - { label: "Hero Título", name: "heroTitle", widget: "string" }
-      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-      - { label: "Historia", name: "history", widget: "markdown" }
-      - { label: "Imagen de Historia", name: "historyImage", widget: "image" }
-      - label: "Valores"
-        name: "values"
-        widget: "list"
-        fields:
-          - { label: "Ícono", name: "icon", widget: "string" }
-          - { label: "Título", name: "title", widget: "string" }
-          - { label: "Descripción", name: "description", widget: "text" }
-      - label: "Equipo"
-        name: "team"
-        widget: "list"
-        fields:
-          - { label: "Nombre", name: "name", widget: "string" }
-          - { label: "Cargo", name: "position", widget: "string" }
-          - { label: "Imagen", name: "image", widget: "image" }
-          - { label: "Biografía", name: "bio", widget: "text", required: false }
-
   # 🛠️ Services Page (Multiple entries)
   - name: "services"
     label: "Servicios"
@@ -84,6 +37,7 @@ collections:
       - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Destacado", name: "featured", widget: "boolean", default: false }
       - { label: "Contenido", name: "body", widget: "markdown" }
+      - { label: "Orden", name: "order", widget: "number", default: 1 }
 
   # 🏗️ Projects Page (Multiple entries)
   - name: "projects"
@@ -100,26 +54,6 @@ collections:
       - { label: "Fecha", name: "date", widget: "datetime" }
       - { label: "Contenido", name: "body", widget: "markdown" }
 
-  # 📞 Contact Page (Single file)
-  - name: "contact"
-    label: "Contacto"
-    file: "content/contact.md"
-    fields:
-      - { label: "Hero Fondo", name: "heroBg", widget: "image" }
-      - { label: "Hero Título", name: "heroTitle", widget: "string" }
-      - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Dirección", name: "address", widget: "string" }
-      - { label: "Teléfono", name: "phone", widget: "string" }
-      - { label: "Email", name: "email", widget: "string" }
-      - { label: "Horario", name: "schedule", widget: "string" }
-      - label: "FAQs"
-        name: "faqs"
-        widget: "list"
-        fields:
-          - { label: "Pregunta", name: "question", widget: "string" }
-          - { label: "Respuesta", name: "answer", widget: "text" }
-
   # 🌟 Testimonials (Multiple entries)
   - name: "testimonials"
     label: "Testimonios"
@@ -132,3 +66,74 @@ collections:
       - { label: "Testimonio", name: "testimonial", widget: "text" }
       - { label: "Imagen", name: "image", widget: "image" }
 
+  # Pages (file collections)
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - file: "content/home.md"
+        label: "Página de Inicio"
+        name: "home"
+        fields:
+          - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+          - { label: "Hero Título", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+          - { label: "Hero Imagen", name: "heroImage", widget: "image" }
+          - { label: "Servicios Título", name: "servicesTitle", widget: "string" }
+          - { label: "Servicios Descripción", name: "servicesDescription", widget: "string" }
+          - { label: "CTA Título", name: "ctaTitle", widget: "string" }
+          - { label: "CTA Descripción", name: "ctaDescription", widget: "string" }
+          - { label: "CTA Botón", name: "ctaButton", widget: "string" }
+          - label: "Estadísticas"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Número", name: "number", widget: "string" }
+              - { label: "Etiqueta", name: "label", widget: "string" }
+      
+      - file: "content/about.md"
+        label: "Página Sobre Nosotros"
+        name: "about"
+        fields:
+          - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+          - { label: "Hero Título", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+          - { label: "Hero Imagen", name: "heroImage", widget: "image" }
+          - { label: "Historia Título", name: "historyTitle", widget: "string" }
+          - { label: "Historia Contenido", name: "historyContent", widget: "markdown" }
+          - { label: "Historia Imagen", name: "historyImage", widget: "image" }
+          - { label: "Valores Título", name: "valuesTitle", widget: "string" }
+          - { label: "Valores Descripción", name: "valuesDescription", widget: "string" }
+          - label: "Valores"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Ícono", name: "icon", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descripción", name: "description", widget: "text" }
+          - label: "Equipo"
+            name: "team"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Cargo", name: "position", widget: "string" }
+              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Biografía", name: "bio", widget: "text", required: false }
+      
+      - file: "content/contact.md"
+        label: "Contacto"
+        name: "contact"
+        fields:
+          - { label: "Hero Fondo", name: "heroBg", widget: "image" }
+          - { label: "Hero Título", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
+          - { label: "Descripción", name: "description", widget: "text" }
+          - { label: "Dirección", name: "address", widget: "string" }
+          - { label: "Teléfono", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Horario", name: "schedule", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Pregunta", name: "question", widget: "string" }
+              - { label: "Respuesta", name: "answer", widget: "text" }
