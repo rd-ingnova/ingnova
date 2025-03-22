@@ -14,8 +14,7 @@ const HomeHero: React.FC<MarkupData> = ({ content, data }) => {
       {/* Imagen de fondo con overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
-          // src={data.heroBg}
+          src={data.heroBg}
           alt="RD INGNOVA - Ingeniería y Consultoría"
           fill
           priority
