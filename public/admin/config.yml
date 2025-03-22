@@ -4,11 +4,11 @@ backend:
   publish_mode: editorial_workflow
 
 commit_messages:
-  create: Create {{collection}} "{{slug}}"
-  update: Update {{collection}} "{{slug}}"
-  delete: Delete {{collection}} "{{slug}}"
-  uploadMedia: Upload "{{path}}"
-  deleteMedia: Delete "{{path}}"
+  create: create {{collection}} "{{slug}}"
+  update: update {{collection}} "{{slug}}"
+  delete: delete {{collection}} "{{slug}}"
+  uploadMedia: upload "{{path}}"
+  deleteMedia: delete "{{path}}"
   openAuthoring: "{{message}}"
 
 site_url: https://ingnova.netlify.app
@@ -17,8 +17,9 @@ locale: "es"
 show_preview_links: false
 
 slug:
-  encoding: "ascii"
+  encoding: "unicode"
   sanitize_replacement: "_"
+  clean_accents: true
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -56,27 +57,15 @@ collections:
       - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Ubicación", name: "location", widget: "string" }
-      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Fecha", name: "date", widget: "datetime", required: false }
       - { label: "Contenido", name: "body", widget: "markdown" }
-
-  # 🌟 Testimonials (Multiple entries)
-  - name: "testimonials"
-    label: "Testimonios"
-    folder: "content/testimonials"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Nombre", name: "name", widget: "string" }
-      - { label: "Cargo", name: "position", widget: "string" }
-      - { label: "Testimonio", name: "testimonial", widget: "text" }
-      - { label: "Imagen", name: "image", widget: "image" }
 
   # Stats - Home (Multiple entries)
   - name: "stats"
     label: "Estadísticas"
     folder: "content/stats"
     create: true
-    slug: "{{slug}}"
+    slug: "{{label}}"
     fields:
       - { label: "Número", name: "number", widget: "string" }
       - { label: "Etiqueta", name: "label", widget: "string" }
@@ -97,19 +86,19 @@ collections:
     label: "Equipo"
     folder: "content/team"
     create: true
-    slug: "{{slug}}"
+    slug: "{{name}}"
     fields:
       - { label: "Nombre", name: "name", widget: "string" }
       - { label: "Cargo", name: "position", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "Biografía", name: "bio", widget: "text", required: false }
+      - { label: "Biografía", name: "bio", widget: "markdown", required: false }
 
   # FAQs - Contact (Multiple entries)
   - name: "faqs"
     label: "Preguntas Frecuentes"
     folder: "content/faqs"
     create: true
-    slug: "{{slug}}"
+    slug: "{{question}}"
     fields:
       - { label: "Pregunta", name: "question", widget: "string" }
       - { label: "Respuesta", name: "answer", widget: "text" }
@@ -125,7 +114,6 @@ collections:
           - { label: "Hero Fondo", name: "heroBg", widget: "image" }
           - { label: "Hero Título", name: "heroTitle", widget: "string" }
           - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-          - { label: "Hero Imagen", name: "heroImage", widget: "image" }
           - {
               label: "Servicios Título",
               name: "servicesTitle",
@@ -258,6 +246,10 @@ collections:
           - { label: "Teléfono", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Horario", name: "schedule", widget: "string" }
+          - { label: "Instagram Link", name: "instagram", widget: "string" }
+          - { label: "Facebook Link", name: "facebook", widget: "string" }
+          - { label: "LinkedIn Link", name: "linkedin", widget: "string" }
+          - { label: "Youtube Link", name: "youtube", widget: "string" }
           - {
               label: "FAQs",
               name: "faqItems",
