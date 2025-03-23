@@ -6,6 +6,7 @@ description: Ejecución de maniobra de gateo para cambio de neoprenos del puente
 image: /images/uploads/img-20250313-wa0053.jpg
 location: Bogotá, Colombia
 ---
+
 ## Desafío inicial
 
 Hacer levantamiento de 680 Tn de forma sincrónica por medio de cilindros hidráulicos y maniobra de cambios de neoprenos.
@@ -24,4 +25,4 @@ Dos meses
 
 ## Resultados medibles
 
-Los demás proponentes pedían más de tres meses para ejecutar la misma maniobra.
+Los demás proponentes pedían más de tres meses para ejecutar la misma maniobra

@@ -67,7 +67,7 @@ export default function AboutPage() {
                 key={index}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="text-4xl mb-4">{value.icon}</div>
+                <div className="select-none text-4xl mb-4">{value.icon}</div>
                 <h3 className="text-xl font-bold mb-2 text-primary-700">
                   {value.title}
                 </h3>

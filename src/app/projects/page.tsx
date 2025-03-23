@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Hero from "@/components/ui/Hero";
 import ProjectsGrid from "@/components/sections/ProjectsGrid";
-import { motion } from "framer-motion";
 import { getMarkup } from "@/lib/utils";
 
 export const metadata: Metadata = {

@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { createSlug } from "@/lib/slug";
 
 export interface ServiceProps {
   title: string;
@@ -34,7 +35,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute top-4 left-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-2xl">
+        <div className="select-none absolute top-4 left-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-2xl">
           {service.icon}
         </div>
       </div>
@@ -45,7 +46,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         <p className="text-gray-600">{service.description}</p>
         <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
           <a
-            href={`/services#${service.order}`}
+            href={`/services/${createSlug(service.title)}`}
             className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center"
           >
             Más información

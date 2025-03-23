@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { createSlug } from "@/lib/slug";
 
 export interface ProjectProps {
   title: string;
@@ -9,7 +10,6 @@ export interface ProjectProps {
   description: string;
   image: string;
   location: string;
-  order: number;
 }
 
 interface ProjectCardProps {
@@ -75,7 +75,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
         <div className="pt-4 border-t border-gray-100">
           <a
-            href={`/projects/${project.order}`}
+            href={`/projects/${createSlug(project.title)}`}
             className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center"
           >
             Ver detalles
