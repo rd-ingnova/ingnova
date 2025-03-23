@@ -72,7 +72,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
                       />
                     ),
                     p: ({ node, ...props }) => (
-                      <p className="mb-4" {...props} />
+                      <p className="text-lg mb-4" {...props} />
                     ),
                     iframe: ({ node, ...props }) => (
                       <iframe

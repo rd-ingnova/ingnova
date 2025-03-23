@@ -71,6 +71,9 @@ export default async function ServicePage({ params }: ServiceParams) {
                         {...props}
                       />
                     ),
+                    p: ({ node, ...props }) => (
+                      <p className="text-lg mb-4" {...props} />
+                    ),
                     iframe: ({ node, ...props }) => (
                       <iframe
                         className="aspect-video rounded-lg overflow-hidden mt-8"

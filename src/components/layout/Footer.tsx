@@ -17,7 +17,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
   return (
     <footer className="bg-primary-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Columna 1: Información de la empresa */}
           <div>
             <h3 className="text-2xl font-bold mb-6">RD INGNOVA</h3>
@@ -60,7 +60,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
           {/* Columna 2: Enlaces rápidos */}
           <div>
             <h3 className="text-xl font-bold mb-6">Enlaces Rápidos</h3>
-            <ul className="space-y-3">
+            <div className="flex flex-wrap gap-6">
               {[
                 { name: "Inicio", href: "/" },
                 { name: "Sobre Nosotros", href: "/about" },
@@ -68,42 +68,19 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
                 { name: "Proyectos", href: "/projects" },
                 { name: "Contacto", href: "/contact" },
               ].map((link) => (
-                <li key={link.href}>
+                <div key={link.href} className="flex-shrink-0">
                   <Link
                     href={link.href}
                     className="text-primary-100 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Columna 3: Servicios */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Servicios</h3>
-            <ul className="space-y-3">
-              {[
-                { name: "Consultoría", href: "/services#consultoria" },
-                { name: "Construcción", href: "/services#construccion" },
-                { name: "Rehabilitación", href: "/services#rehabilitacion" },
-                { name: "Pruebas de Carga", href: "/services#pruebas" },
-                { name: "Diseño Estructural", href: "/services#diseno" },
-              ].map((service, index) => (
-                <li key={index}>
-                  <Link
-                    href={service.href}
-                    className="text-primary-100 hover:text-white transition-colors"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Columna 4: Contacto */}
+          {/* Columna 3: Contacto */}
           <div>
             <h3 className="text-xl font-bold mb-6">Contacto</h3>
             <ul className="space-y-4">
