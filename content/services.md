@@ -16,4 +16,5 @@ servicesItems:
   - consultoria
   - pruebas_de_carga
   - servicios_especializados
+  - instrumentacion
 ---
