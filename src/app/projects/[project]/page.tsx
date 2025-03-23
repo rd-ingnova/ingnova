@@ -5,17 +5,18 @@ import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
 type ProjectParams = {
-  project: string;
+  params: Promise<{
+    project: string;
+  }>;
 };
 
 export async function generateMetadata({
   params,
-}: {
-  params: ProjectParams;
-}): Promise<Metadata> {
+}: ProjectParams): Promise<Metadata> {
+  const resolvedParams = await params;
   const projectData = getMarkup(
     "/content/projects",
-    `${params.project}.md`
+    `${resolvedParams.project}.md`
   )?.data;
 
   if (!projectData) {
@@ -32,12 +33,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: ProjectParams;
-}) {
-  const project_md = getMarkup("/content/projects", `${params.project}.md`);
+export default async function ProjectPage({ params }: ProjectParams) {
+  const resolvedParams = await params;
+  const project_md = getMarkup(
+    "/content/projects",
+    `${resolvedParams.project}.md`
+  );
 
   if (!project_md) return null;
   const { data, content } = project_md;
@@ -132,7 +133,7 @@ export default async function ProjectPage({
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {getRelatedProjects(params.project).map(
+            {getRelatedProjects(resolvedParams.project).map(
               (project: any, index: number) => (
                 <div
                   key={index}

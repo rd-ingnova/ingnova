@@ -5,17 +5,18 @@ import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
 type ServiceParams = {
-  service: string;
+  params: Promise<{
+    service: string;
+  }>;
 };
 
 export async function generateMetadata({
   params,
-}: {
-  params: ServiceParams;
-}): Promise<Metadata> {
+}: ServiceParams): Promise<Metadata> {
+  const resolvedParams = await params;
   const serviceData = getMarkup(
     "/content/services",
-    `${params.service}.md`
+    `${resolvedParams.service}.md`
   )?.data;
 
   if (!serviceData) {
@@ -32,12 +33,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function ServicePage({
-  params,
-}: {
-  params: ServiceParams;
-}) {
-  const service_md = getMarkup("/content/services", `${params.service}.md`);
+export default async function ServicePage({ params }: ServiceParams) {
+  const resolvedParams = await params;
+  const service_md = getMarkup(
+    "/content/services",
+    `${resolvedParams.service}.md`
+  );
 
   if (!service_md) return null;
   const { data, content } = service_md;
@@ -95,7 +96,7 @@ export default async function ServicePage({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* We'll fetch and display related services here */}
-            {getRelatedServices(params.service).map(
+            {getRelatedServices(resolvedParams.service).map(
               (service: any, index: any) => (
                 <div
                   key={index}
