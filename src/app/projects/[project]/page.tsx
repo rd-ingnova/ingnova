@@ -4,7 +4,7 @@ import { getMarkup } from "@/lib/utils";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-type ProjectPageParams = {
+type ProjectPageProps = {
   params: {
     project: string;
   };
@@ -12,7 +12,7 @@ type ProjectPageParams = {
 
 export async function generateMetadata({
   params,
-}: ProjectPageParams): Promise<Metadata> {
+}: ProjectPageProps): Promise<Metadata> {
   const projectData = getMarkup(
     "/content/projects",
     `${params.project}.md`
@@ -32,7 +32,7 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageParams) {
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project_md = getMarkup("/content/projects", `${params.project}.md`);
 
   if (!project_md) return null;
@@ -65,6 +65,9 @@ export default function ProjectPage({ params }: ProjectPageParams) {
                         className="text-2xl text-primary-800 my-4"
                         {...props}
                       />
+                    ),
+                    p: ({ node, ...props }) => (
+                      <p className="mb-4" {...props} />
                     ),
                     iframe: ({ node, ...props }) => (
                       <iframe
