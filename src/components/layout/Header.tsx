@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import clsx from "clsx";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,11 +43,13 @@ const Header = () => {
 
   return (
     <header
-      className={clsx("fixed w-full z-50 transition-all duration-300", {
-        "bg-white shadow-md py-2": isScrolled,
-        "bg-white lg:bg-transparent shadow-md py-2": isMenuOpen && !isScrolled,
-        "bg-transparent py-4": !isScrolled && !isMenuOpen,
-      })}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white shadow-md py-2"
+          : isMenuOpen
+          ? "bg-white lg:bg-transparent shadow-md py-2"
+          : "bg-transparent py-4"
+      }`}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -82,17 +83,17 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 className={`
-                  transition-colors duration-300 font-medium
-                  ${
-                    pathname === link.href
-                      ? isScrolled
-                        ? "text-primary-600"
-                        : "text-white font-bold"
-                      : isScrolled
-                      ? "text-gray-700 hover:text-primary-600"
-                      : "text-white/90 hover:text-white"
-                  }
-                `}
+            transition-colors duration-300 font-medium
+            ${
+              pathname === link.href
+                ? isScrolled
+                  ? "text-primary-600"
+                  : "text-white font-bold"
+                : isScrolled
+                ? "text-gray-700 hover:text-primary-600"
+                : "text-white/90 hover:text-white"
+            }
+          `}
               >
                 {link.name}
               </Link>
@@ -100,12 +101,12 @@ const Header = () => {
             <Link
               href="/contact"
               className={`
-                btn ${
-                  isScrolled
-                    ? "btn-primary"
-                    : "bg-white text-primary-700 hover:bg-gray-100"
-                }
-              `}
+          btn ${
+            isScrolled
+              ? "btn-primary"
+              : "bg-white text-primary-700 hover:bg-gray-100"
+          }
+          `}
             >
               Solicitar Presupuesto
             </Link>
@@ -142,12 +143,12 @@ const Header = () => {
                   key={link.href}
                   href={link.href}
                   className={`block py-2 px-4 font-medium rounded-lg transition-colors duration-300
-                    ${
-                      pathname === link.href
-                        ? "bg-primary-50 text-primary-700"
-                        : "text-gray-700 hover:bg-gray-50"
-                    }
-                  `}
+            ${
+              pathname === link.href
+                ? "bg-primary-50 text-primary-700"
+                : "text-gray-700 hover:bg-gray-50"
+            }
+            `}
                 >
                   {link.name}
                 </Link>

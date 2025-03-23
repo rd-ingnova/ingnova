@@ -1,0 +1,6 @@
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["@next/font", "sharp"]
+
+[build.environment]
+  NEXT_USE_NETLIFY_EDGE = "true"

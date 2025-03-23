@@ -4,15 +4,15 @@ import { getMarkup } from "@/lib/utils";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-type ServicePageProps = {
-  params: {
-    service: string;
-  };
+type ServiceParams = {
+  service: string;
 };
 
 export async function generateMetadata({
   params,
-}: ServicePageProps): Promise<Metadata> {
+}: {
+  params: ServiceParams;
+}): Promise<Metadata> {
   const serviceData = getMarkup(
     "/content/services",
     `${params.service}.md`
@@ -32,7 +32,11 @@ export async function generateMetadata({
   };
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
+export default async function ServicePage({
+  params,
+}: {
+  params: ServiceParams;
+}) {
   const service_md = getMarkup("/content/services", `${params.service}.md`);
 
   if (!service_md) return null;
