@@ -1,6 +1,6 @@
 [functions]
   node_bundler = "esbuild"
-  external_node_modules = ["@next/font", "sharp"]
+  external_node_modules = ["@next/font", "sharp", "next", "react", "react-dom"]
   included_files = []
   
 [build.environment]
