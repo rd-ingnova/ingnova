@@ -1,5 +1,5 @@
 ---
-heroBg: /images/uploads/hero_img.jpg
+heroBg: /images/uploads/dji_fly_20250218_155336_973_1739912492886_photo.jpg
 heroTitle: " Soluciones de ingeniería para el futuro"
 heroSubtitle: RD INGNOVA combina más de 20 años de experiencia en ingeniería con
   un enfoque innovador para el desarrollo de proyectos exitosos. Nos
