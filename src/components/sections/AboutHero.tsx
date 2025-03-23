@@ -2,14 +2,15 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { MarkupData } from "@/lib/utils";
 
-const AboutHero = () => {
+const AboutHero: React.FC<MarkupData> = ({ data }) => {
   return (
     <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
       {/* Imagen de fondo con overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+          src={data.heroBg}
           alt="Sobre RD INGNOVA"
           fill
           priority
@@ -27,7 +28,7 @@ const AboutHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Sobre Nosotros
+            {data.heroTitle}
           </motion.h1>
 
           <motion.p
@@ -36,8 +37,7 @@ const AboutHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Conoce nuestra historia, valores y al equipo que hace posible
-            nuestra excelencia en cada proyecto
+            {data.heroSubtitle}
           </motion.p>
         </div>
       </div>

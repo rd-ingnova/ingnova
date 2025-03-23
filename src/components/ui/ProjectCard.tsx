@@ -3,17 +3,17 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-interface Project {
-  id: number;
+export interface ProjectProps {
   title: string;
   category: string;
   description: string;
   image: string;
   location: string;
+  order: number;
 }
 
 interface ProjectCardProps {
-  project: Project;
+  project: ProjectProps;
 }
 
 const item = {
@@ -75,7 +75,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
         <div className="pt-4 border-t border-gray-100">
           <a
-            href={`/projects/${project.id}`}
+            href={`/projects/${project.order}`}
             className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center"
           >
             Ver detalles

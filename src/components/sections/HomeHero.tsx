@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
 import { MarkupData } from "@/lib/utils";
 
-const HomeHero: React.FC<MarkupData> = ({ content, data }) => {
+const HomeHero: React.FC<MarkupData> = ({ data }) => {
   return (
     <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Imagen de fondo con overlay */}

@@ -3,13 +3,13 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-interface ServiceProps {
-  id: number;
+export interface ServiceProps {
   title: string;
   description: string;
   icon: string;
   image: string;
   featured?: boolean;
+  order: number;
 }
 
 interface ServiceCardProps {
@@ -45,7 +45,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         <p className="text-gray-600">{service.description}</p>
         <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
           <a
-            href={`/services#${service.id}`}
+            href={`/services#${service.order}`}
             className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center"
           >
             Más información

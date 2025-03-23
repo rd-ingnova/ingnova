@@ -1,19 +1,10 @@
 "use client";
 import React from "react";
-import ProjectCard from "@/components/ui/ProjectCard";
+import ProjectCard, { ProjectProps } from "@/components/ui/ProjectCard";
 import { motion } from "framer-motion";
 
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  location: string;
-}
-
 interface ProjectsGridProps {
-  projects: Project[];
+  data: ProjectProps[];
 }
 
 const container = {
@@ -26,7 +17,9 @@ const container = {
   },
 };
 
-const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
+const ProjectsGrid: React.FC<ProjectsGridProps> = ({ data }) => {
+  const projects = data;
+
   return (
     <motion.div
       variants={container}
@@ -35,8 +28,8 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
       viewport={{ once: true, amount: 0.1 }}
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
     >
-      {projects.map((project) => (
-        <ProjectCard key={project.id} project={project} />
+      {projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
       ))}
     </motion.div>
   );

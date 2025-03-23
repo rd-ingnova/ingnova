@@ -14,6 +14,11 @@ const nextConfig = {
         hostname: "source.unsplash.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "media.licdn.com",
+        pathname: "**",
+      },
     ],
   },
 };

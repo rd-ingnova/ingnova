@@ -1,64 +1,66 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const ContactForm = () => {
+const ContactForm = ({ email }: any) => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    asunto: "",
+    mensaje: "",
+  });
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    // Create email subject and body with form data
+    const emailSubject = formData.asunto
+      ? formData.asunto
+      : "Consulta desde formulario de contacto";
+
+    const emailBody = `
+      Nombre: ${formData.nombre}
+      Asunto: ${formData.asunto}
+      Mensaje: ${formData.mensaje}
+    `.trim();
+
+    // Create mailto URL with encoded parameters
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(
+      emailSubject
+    )}&body=${encodeURIComponent(emailBody)}`;
+
+    // Open email client
+    window.location.href = mailtoUrl;
+  };
+
   return (
     <motion.form
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="space-y-6"
-      action="#"
-      method="POST"
+      onSubmit={handleSubmit}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label
-            htmlFor="first-name"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Nombre
-          </label>
-          <input
-            type="text"
-            name="first-name"
-            id="first-name"
-            autoComplete="given-name"
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="last-name"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Apellidos
-          </label>
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            autoComplete="family-name"
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-          />
-        </div>
-      </div>
-
       <div>
         <label
-          htmlFor="email"
+          htmlFor="nombre"
           className="block text-sm font-medium text-gray-700 mb-1"
         >
-          Email
+          Nombre
         </label>
         <input
-          type="email"
-          name="email"
-          id="email"
-          autoComplete="email"
+          type="text"
+          name="nombre"
+          id="nombre"
+          value={formData.nombre}
+          onChange={handleChange}
           required
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
         />
@@ -66,78 +68,49 @@ const ContactForm = () => {
 
       <div>
         <label
-          htmlFor="phone"
-          className="block text-sm font-medium text-gray-700 mb-1"
-        >
-          Teléfono
-        </label>
-        <input
-          type="tel"
-          name="phone"
-          id="phone"
-          autoComplete="tel"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="subject"
+          htmlFor="asunto"
           className="block text-sm font-medium text-gray-700 mb-1"
         >
           Asunto
         </label>
         <select
-          id="subject"
-          name="subject"
+          id="asunto"
+          name="asunto"
+          value={formData.asunto}
+          onChange={handleChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
         >
           <option value="">Selecciona una opción</option>
-          <option value="consulta">Consulta General</option>
-          <option value="presupuesto">Solicitud de Presupuesto</option>
-          <option value="proyecto">Información sobre Proyecto</option>
-          <option value="colaboracion">Propuesta de Colaboración</option>
-          <option value="otro">Otro</option>
+          <option value="Consulta General">Consulta General</option>
+          <option value="Solicitud de Presupuesto">
+            Solicitud de Presupuesto
+          </option>
+          <option value="Información sobre Proyecto">
+            Información sobre Proyecto
+          </option>
+          <option value="Propuesta de Colaboración">
+            Propuesta de Colaboración
+          </option>
+          <option value="Otro">Otro</option>
         </select>
       </div>
 
       <div>
         <label
-          htmlFor="message"
+          htmlFor="mensaje"
           className="block text-sm font-medium text-gray-700 mb-1"
         >
           Mensaje
         </label>
         <textarea
-          id="message"
-          name="message"
+          id="mensaje"
+          name="mensaje"
           rows={4}
+          value={formData.mensaje}
+          onChange={handleChange}
           required
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
         ></textarea>
-      </div>
-
-      <div className="flex items-start">
-        <div className="flex items-center h-5">
-          <input
-            id="privacy"
-            name="privacy"
-            type="checkbox"
-            required
-            className="h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
-          />
-        </div>
-        <div className="ml-3 text-sm">
-          <label htmlFor="privacy" className="text-gray-500">
-            He leído y acepto la{" "}
-            <a
-              href="/privacy-policy"
-              className="text-primary-600 hover:text-primary-800"
-            >
-              política de privacidad
-            </a>
-          </label>
-        </div>
       </div>
 
       <div>

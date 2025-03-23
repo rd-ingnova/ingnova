@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 
 export interface MarkupData {
-  content: string;
+  content?: string;
   data: Record<string, any>;
 }
 

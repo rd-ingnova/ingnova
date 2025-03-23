@@ -1,16 +1,17 @@
 "use client";
+import { MarkupData } from "@/lib/utils";
 import Link from "next/link";
 import {
   FaFacebook,
-  FaTwitter,
   FaLinkedin,
   FaInstagram,
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
+  FaYoutube,
 } from "react-icons/fa";
 
-const Footer = () => {
+const Footer: React.FC<MarkupData> = ({ data }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -24,35 +25,35 @@ const Footer = () => {
               Empresa líder en servicios de ingeniería y consultoría, ofreciendo
               soluciones innovadoras para proyectos de infraestructura.
             </p>
+
             <div className="flex space-x-4">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="text-primary-100 hover:text-white transition-colors"
-              >
-                <FaFacebook size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="text-primary-100 hover:text-white transition-colors"
-              >
-                <FaTwitter size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="text-primary-100 hover:text-white transition-colors"
-              >
-                <FaLinkedin size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="text-primary-100 hover:text-white transition-colors"
-              >
-                <FaInstagram size={20} />
-              </a>
+              {[
+                {
+                  icon: <FaFacebook size={20} />,
+                  href: data.facebook,
+                },
+                {
+                  icon: <FaLinkedin size={20} />,
+                  href: data.linkedin,
+                },
+                {
+                  icon: <FaInstagram size={20} />,
+                  href: data.instagram,
+                },
+                {
+                  icon: <FaYoutube size={20} />,
+                  href: data.youtube,
+                },
+              ].map((link: any) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  aria-label="Facebook"
+                  className="text-primary-100 hover:text-white transition-colors"
+                >
+                  {link.icon}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -108,15 +109,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="text-primary-400 mt-1 mr-3 flex-shrink-0" />
-                <span className="text-primary-100">
-                  Carrera 17B # 81 - 71
-                  <br />
-                  Soledad - Atlántico, Colombia
-                </span>
+                <span className="text-primary-100">{data.address}</span>
               </li>
               <li className="flex items-center">
                 <FaPhone className="text-primary-400 mr-3 flex-shrink-0" />
-                <span className="text-primary-100">+57 321 301 8486</span>
+                <span className="text-primary-100">{data.phone}</span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="text-primary-400 mr-3 flex-shrink-0" />
@@ -124,7 +121,7 @@ const Footer = () => {
                   href="mailto:info@rdingnova.com"
                   className="text-primary-100 hover:text-white transition-colors"
                 >
-                  rdingnova@gmail.com
+                  {data.email}
                 </a>
               </li>
             </ul>

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Hero from "@/components/ui/Hero";
 import ServicesGrid from "@/components/sections/ServicesGrid";
+import { getMarkup } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Servicios | RD INGNOVA",
@@ -9,12 +10,21 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const services_md = getMarkup("/content", "services.md");
+
+  if (!services_md) return null;
+  const data = services_md.data;
+
+  const services = data.servicesItems.map(
+    (filename: string) => getMarkup("/content/services", `${filename}.md`)?.data
+  );
+
   return (
     <>
       <Hero
-        title="Nuestros Servicios"
-        subtitle="Soluciones integrales de ingeniería para cada etapa de su proyecto"
-        imageUrl="https://images.unsplash.com/photo-1504307651254-35680f356dfd"
+        title={data.heroTitle}
+        subtitle={data.heroSubtitle}
+        imageUrl={data.heroBg}
         alignment="center"
       />
 
@@ -22,16 +32,14 @@ export default function ServicesPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-primary-800">
-              Servicios Especializados
+              {data.servicesTitle}
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              En RD INGNOVA ofrecemos una amplia gama de servicios de ingeniería
-              y consultoría, adaptados a las necesidades específicas de cada
-              cliente y sector.
+              {data.servicesContent}
             </p>
           </div>
 
-          <ServicesGrid />
+          <ServicesGrid data={services} />
         </div>
       </section>
 
