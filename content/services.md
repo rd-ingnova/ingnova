@@ -7,7 +7,7 @@ servicesContent: En RD INGNOVA ofrecemos una amplia gama de servicios de
   ingeniería y consultoría, adaptados a las necesidades específicas de cada
   cliente y sector.
 servicesItems:
-  - construccion_1
+  - construccion
   - concretos_especiales
   - consultoria
   - pruebas_de_carga
