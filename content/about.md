@@ -10,9 +10,8 @@ historyContent: >-
   reciente, su  equipo cuenta con más de 20 años de experiencia en diseño,
   construcción y  rehabilitación de infraestructuras a gran escala, enfrentando
   desafíos  complejos con soluciones eficientes y utilizando tecnología
-  avanzada.\
+  avanzada.
 
-  \
 
   Con un sólido respaldo técnico, la empresa ha destacado en proyectos de puentes, cimentaciones, infraestructura vial y rehabilitación estructural, caracterizándose por el cumplimiento efectivo, el éxito en los resultados y propuestas innovadoras. RD INGNOVA continúa expandiéndose, ejecutando proyectos de gran envergadura y consolidándose como referente en ingeniería civil, con contratos firmados para nuevos proyectos que generarán un impacto positivo en el desarrollo del país.
 historyImage: /images/uploads/dji_0093.jpg
