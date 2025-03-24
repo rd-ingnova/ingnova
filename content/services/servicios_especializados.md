@@ -3,7 +3,7 @@ title: Servicios Especializados
 description: Personal con la mayor experiencia en actividades especializadas de
   la ingeniería.
 icon: ⚙️
-image: /images/uploads/img-20250313-wa0051.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790473/img-20250313-wa0051_iqtbwl.jpg
 featured: false
 order: 4
 ---
