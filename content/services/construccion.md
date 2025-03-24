@@ -4,7 +4,6 @@ description: Capacidad técnica y operativa para ejecutar proyectos de obra civi
 icon: 👷‍♂️
 image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742791434/dji_0997_f0arxe.jpg
 featured: false
-order: 3
 ---
 Podemos llevar a cabo la **construcción de infraestructura de obra lineal**, como **pontones**, **canales** y otras estructuras. Además, tenemos experiencia en la construcción de **puentes vehiculares** y **peatonales**, así como en la edificación de **estructuras en concreto** y **metálicas**.
 

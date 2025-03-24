@@ -46,7 +46,17 @@ collections:
           default: false,
         }
       - { label: "Contenido", name: "body", widget: "markdown" }
-      - { label: "Orden", name: "order", widget: "number", default: 1 }
+
+  # 📌 Equipos (Equipment) Section
+  - name: "equipment"
+    label: "Equipos"
+    folder: "content/equipment"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
 
   # 🏗️ Projects Page (Multiple entries)
   - name: "projects"
