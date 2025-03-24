@@ -11,7 +11,7 @@ const AboutHero: React.FC<MarkupData> = ({ data }) => {
       <div className="absolute inset-0 z-0">
         <Image
           src={data.heroBg}
-          alt="Sobre RD INGNOVA"
+          alt="Sobre INGNOVA SAS"
           fill
           priority
           className="object-cover"

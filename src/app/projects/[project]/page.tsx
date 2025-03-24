@@ -21,14 +21,14 @@ export async function generateMetadata({
 
   if (!projectData) {
     return {
-      title: "Proyecto no encontrado | RD INGNOVA",
+      title: "Proyecto no encontrado | INGNOVA",
       description:
         "El proyecto solicitado no existe o no está disponible actualmente.",
     };
   }
 
   return {
-    title: `${projectData.title} | RD INGNOVA`,
+    title: `${projectData.title} | INGNOVA`,
     description: projectData.description,
   };
 }

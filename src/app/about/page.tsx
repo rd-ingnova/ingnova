@@ -4,9 +4,9 @@ import Image from "next/image";
 import { getMarkup } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Sobre Nosotros | RD INGNOVA",
+  title: "Sobre Nosotros | INGNOVA",
   description:
-    "Conoce la historia, equipo y visión de RD INGNOVA. Empresa líder en servicios de ingeniería y consultoría.",
+    "Conoce la historia, equipo y visión de INGNOVA - Ingeniería Especializada. Empresa líder en servicios de ingeniería y consultoría.",
 };
 
 export default function AboutPage() {
@@ -40,7 +40,7 @@ export default function AboutPage() {
             <div className="relative h-96 rounded-xl overflow-hidden">
               <Image
                 src={data.historyImage}
-                alt="Historia de RD INGNOVA"
+                alt="Historia de INGNOVA"
                 fill
                 className="object-cover"
               />

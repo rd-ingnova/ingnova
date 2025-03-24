@@ -64,7 +64,7 @@ const Header = () => {
                   : "/logo_secondary.png"
               }
               className="lg:hidden"
-              alt="Logo de RD INGNOVA"
+              alt="Logo de INGNOVA SAS"
             />
             {/* Logo Desktop */}
             <Image
@@ -72,7 +72,7 @@ const Header = () => {
               width={180}
               src={isScrolled ? "/logo_primary.png" : "/logo_secondary.png"}
               className="hidden lg:block"
-              alt="Logo de RD INGNOVA"
+              alt="Logo de INGNOVA SAS"
             />
           </Link>
 
