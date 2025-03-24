@@ -38,7 +38,7 @@ const EquipmentCard: React.FC<EquipmentCardProps> = ({ equipment }) => {
           {equipment.title}
         </h3>
         <p className="text-gray-600 mb-4 line-clamp-3">
-          {equipment.description?.substring(0, 200)}...
+          {equipment.description}
         </p>
         <div className="mt-4 flex justify-between items-center">
           <a
