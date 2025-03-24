@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import AboutHero from "@/components/sections/AboutHero";
 import Image from "next/image";
 import { getMarkup } from "@/lib/utils";
+import MarkdownRaw from "@/components/ui/MarkdownRaw";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros | INGNOVA",
@@ -35,7 +36,9 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-6 text-primary-800">
                 {data.historyTitle}
               </h2>
-              <p className="mb-4 text-gray-700">{data.historyContent}</p>
+              <MarkdownRaw className="text-gray-700">
+                {data.historyContent}
+              </MarkdownRaw>
             </div>
             <div className="relative h-96 rounded-xl overflow-hidden">
               <Image
@@ -78,7 +81,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Equipo */}
+      {/* Personal Clave */}
       <section className="section bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
@@ -117,7 +120,9 @@ export default function AboutPage() {
                   <p className="text-lg text-primary-600 mb-4">
                     {member.position}
                   </p>
-                  <p className="text-gray-700">{member.bio}</p>
+                  <MarkdownRaw className="text-gray-700">
+                    {member.bio}
+                  </MarkdownRaw>
                 </div>
               </div>
             ))}

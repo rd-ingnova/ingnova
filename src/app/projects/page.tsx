@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Hero from "@/components/ui/Hero";
 import ProjectsGrid from "@/components/sections/ProjectsGrid";
 import { getMarkup } from "@/lib/utils";
+import MarkdownRaw from "@/components/ui/MarkdownRaw";
 
 export const metadata: Metadata = {
   title: "Proyectos | INGNOVA",
@@ -34,9 +35,9 @@ export default function ProjectsPage() {
             <h2 className="text-3xl font-bold mb-4 text-primary-800">
               {data.projectsTitle}
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              {data.projectsContent}
-            </p>
+            <div className="max-w-3xl mx-auto">
+              <MarkdownRaw className="text-gray-600">{data.projectsContent}</MarkdownRaw>
+            </div>
           </div>
 
           <ProjectsGrid data={projects} />
