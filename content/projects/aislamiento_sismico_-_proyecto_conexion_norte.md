@@ -3,7 +3,7 @@ title: Aislamiento Sísmico - Proyecto Conexión Norte
 category: Infraestructura Vial
 description: Construcción del aislamiento sísmico y ménsulas de transferencia de
   puente 5, localizado en el K4+983.800 del proyecto vial "Conexión Norte
-image: /images/uploads/29a9114.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790472/29a9114_uot9q7.jpg
 location: Vía Remedios-Zaragoza
 ---
 ## Desafío inicial
