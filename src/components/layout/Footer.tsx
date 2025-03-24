@@ -67,6 +67,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
                 { name: "Servicios", href: "/services" },
                 { name: "Proyectos", href: "/projects" },
                 { name: "Contacto", href: "/contact" },
+                { name: "Admin", href: "/admin" },
               ].map((link) => (
                 <div key={link.href} className="flex-shrink-0">
                   <Link
@@ -95,7 +96,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
               <li className="flex items-center">
                 <FaEnvelope className="text-primary-400 mr-3 flex-shrink-0" />
                 <a
-                  href="mailto:info@rdingnova.com"
+                  href={`mailto:${data.email}`}
                   className="text-primary-100 hover:text-white transition-colors"
                 >
                   {data.email}
