@@ -3,7 +3,7 @@ title: Concretos Especiales
 description: Alto conocimiento en tecnología del concreto, desde concretos
   masivos hasta concretos especiales de alta durabilidad.
 icon: 🏢
-image: /images/uploads/29a8758.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790474/29a8758_g86pvy.jpg
 featured: false
 order: 2
 ---
