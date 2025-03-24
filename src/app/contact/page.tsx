@@ -19,7 +19,7 @@ export default function ContactPage() {
   const contact_md = getMarkup("/content", "contact.md");
 
   if (!contact_md) return null;
-  const data = contact_md.data;
+  const { data } = contact_md;
 
   const faqs = data.faqItems.map(
     (filename: string) => getMarkup("/content/faqs", `${filename}.md`)?.data

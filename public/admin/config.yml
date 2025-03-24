@@ -55,6 +55,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Contenido", name: "body", widget: "markdown" }
 
@@ -215,6 +216,25 @@ collections:
               name: "servicesItems",
               widget: "relation",
               collection: "services",
+              search_fields: ["title"],
+              value_field: "{{slug}}",
+              multiple: true,
+            }
+          - {
+              label: "Equipo Título",
+              name: "equipmentTitle",
+              widget: "string",
+            }
+          - {
+              label: "Equipo Contenido",
+              name: "equipmentContent",
+              widget: "markdown",
+            }
+          - {
+              label: "Equipo",
+              name: "equipmentItems",
+              widget: "relation",
+              collection: "equipment",
               search_fields: ["title"],
               value_field: "{{slug}}",
               multiple: true,

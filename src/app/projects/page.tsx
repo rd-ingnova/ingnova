@@ -13,7 +13,7 @@ export default function ProjectsPage() {
   const projects_md = getMarkup("/content", "projects.md");
 
   if (!projects_md) return null;
-  const data = projects_md.data;
+  const { data } = projects_md;
 
   const projects = data.projectsItems.map(
     (filename: string) => getMarkup("/content/projects", `${filename}.md`)?.data
