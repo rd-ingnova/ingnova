@@ -25,6 +25,9 @@ export default function MarkdownRaw({
           p: ({ node, ...props }) => (
             <p className={`${className} mb-4`} {...props} />
           ),
+          li: ({ node, ...props }) => (
+            <li className={`${className} mb-2`} {...props} />
+          ),
           img: ({ node, ...props }) => (
             <img
               className="max-w-full lg:max-w-1/2 my-8 rounded-lg overflow-hidden"
