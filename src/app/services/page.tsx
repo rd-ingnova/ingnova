@@ -55,7 +55,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Equipment Section */}
-      <section className="section bg-gray-100">
+      <section className="section bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-primary-800">
@@ -73,7 +73,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-gray-50 text-primary-900">
+      <section className="section bg-primary-900 text-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold mb-6">
             ¿Necesita un servicio personalizado?
@@ -84,7 +84,7 @@ export default function ServicesPage() {
           </p>
           <a
             href="/contact"
-            className="btn text-white bg-primary-900 hover:bg-primary-950"
+            className="btn bg-white text-primary-900 hover:bg-gray-100"
           >
             Solicitar Consulta
           </a>
