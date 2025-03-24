@@ -21,14 +21,14 @@ export async function generateMetadata({
 
   if (!serviceData) {
     return {
-      title: "Servicio no encontrado | RD INGNOVA",
+      title: "Servicio no encontrado | INGNOVA",
       description:
         "El servicio solicitado no existe o no está disponible actualmente.",
     };
   }
 
   return {
-    title: `${serviceData.title} | RD INGNOVA`,
+    title: `${serviceData.title} | INGNOVA`,
     description: serviceData.excerpt,
   };
 }

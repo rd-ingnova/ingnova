@@ -4,7 +4,7 @@ import ProjectsGrid from "@/components/sections/ProjectsGrid";
 import { getMarkup } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Proyectos | RD INGNOVA",
+  title: "Proyectos | INGNOVA",
   description:
     "Descubre nuestros proyectos más destacados en ingeniería, consultoría y construcción. Soluciones reales para desafíos complejos.",
 };

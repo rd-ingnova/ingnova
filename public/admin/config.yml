@@ -11,8 +11,8 @@ commit_messages:
   deleteMedia: delete "{{path}}"
   openAuthoring: "{{message}}"
 
-site_url: https://ingnova.netlify.app
-display_url: https://ingnova.netlify.app
+site_url: https://rdingnova.com.co
+display_url: Volver a Inicio
 locale: "es"
 show_preview_links: false
 

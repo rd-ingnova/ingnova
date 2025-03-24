@@ -18,22 +18,22 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "RD INGNOVA | Ingeniería y Consultoría",
+  title: "INGNOVA | Ingeniería Especializada",
   description:
     "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
   keywords:
     "ingeniería, consultoría, construcción, rehabilitación, proyectos, infraestructura",
   openGraph: {
-    title: "RD INGNOVA | Ingeniería y Consultoría",
+    title: "INGNOVA | Ingeniería Especializada",
     description:
       "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
-    siteName: "RD INGNOVA",
+    siteName: "INGNOVA SAS",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "RD INGNOVA - Ingeniería y Consultoría",
+        alt: "INGNOVA - Ingeniería Especializada",
       },
     ],
     locale: "es_ES",
