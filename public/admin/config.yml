@@ -219,6 +219,15 @@ collections:
               value_field: "{{slug}}",
               multiple: true,
             }
+          - {
+              label: "Equipo",
+              name: "equipmentItems",
+              widget: "relation",
+              collection: "equipment",
+              search_fields: ["title"],
+              value_field: "{{slug}}",
+              multiple: true,
+            }
 
       - file: "content/projects.md"
         label: "Página Proyectos"
