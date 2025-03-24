@@ -219,7 +219,6 @@ function getRelatedProjects(currentProjectSlug: string, limit: number = 3) {
     })
     .filter((project: any) => project && project.slug !== currentProjectSlug);
 
-  // Optional: You could enhance this to filter by category for truly related projects
-  // For now, just return a limited number of other projects
-  return allProjects.slice(0, limit);
+  // Return a limited number of other projects
+  return allProjects.sort(() => 0.5 - Math.random()).slice(0, limit);
 }

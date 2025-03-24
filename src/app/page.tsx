@@ -14,7 +14,7 @@ export default function Home() {
     services_md = getMarkup("/content", "services.md");
 
   if (!home_md || !services_md) return null;
-  const data = home_md.data;
+  const {data} = home_md;
 
   const services = services_md.data.servicesItems.map(
     (filename: string) => getMarkup("/content/services", `${filename}.md`)?.data

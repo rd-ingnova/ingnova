@@ -182,5 +182,5 @@ function getRelatedServices(currentServiceSlug: string, limit: number = 3) {
     .filter((service: any) => service && service.slug !== currentServiceSlug);
 
   // Return a limited number of related services
-  return allServices.slice(0, limit);
+  return allServices.sort(() => 0.5 - Math.random()).slice(0, limit);
 }

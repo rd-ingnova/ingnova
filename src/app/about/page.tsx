@@ -13,7 +13,7 @@ export default function AboutPage() {
   const about_md = getMarkup("/content", "about.md");
 
   if (!about_md) return null;
-  const data = about_md.data;
+  const { data } = about_md;
 
   const values = data.valueItems.map(
     (filename: string) => getMarkup("/content/values", `${filename}.md`)?.data
