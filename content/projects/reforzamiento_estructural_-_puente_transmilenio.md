@@ -3,7 +3,7 @@ title: Reforzamiento Estructural - Puente Transmilenio
 category: Infraestructura Vial
 description: Ejecución de obras de reforzamiento estructural en el mantenimiento
   del New Jersey y la losa del puente de la AV. Villavicencio con autopista sur.
-image: /images/uploads/img-20250313-wa0058.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790462/img-20250313-wa0058_hsc3zm.jpg
 location: Bogotá, Colombia
 ---
 ## Desafío inicial
