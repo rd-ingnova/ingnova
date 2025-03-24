@@ -18,6 +18,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rdingnova.com.co/"),
   title: "INGNOVA | Ingeniería Especializada",
   description:
     "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
@@ -28,14 +29,6 @@ export const metadata: Metadata = {
     description:
       "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
     siteName: "INGNOVA SAS",
-    images: [
-      {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "INGNOVA - Ingeniería Especializada",
-      },
-    ],
     locale: "es_ES",
     type: "website",
   },
