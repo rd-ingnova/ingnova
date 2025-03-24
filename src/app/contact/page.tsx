@@ -1,7 +1,12 @@
 import { Metadata } from "next";
 import Hero from "@/components/ui/Hero";
 import ContactForm from "@/components/ui/ContactForm";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaClock,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import { getMarkup } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -46,7 +51,7 @@ export default function ContactPage() {
                     content: data.address,
                   },
                   {
-                    icon: <FaPhone size={20} />,
+                    icon: <FaPhoneAlt size={20} />,
                     title: "Teléfono",
                     content: data.phone,
                   },
