@@ -2,7 +2,7 @@
 title: Construcción
 description: Capacidad técnica y operativa para ejecutar proyectos de obra civil.
 icon: 👷‍♂️
-image: /images/uploads/dji_0997.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742791434/dji_0997_f0arxe.jpg
 featured: false
 order: 3
 ---
