@@ -3,7 +3,7 @@ title: Instrumentación
 description: Amplia experiencia en acompañamiento especializado de
   instrumentación geotécnica y estructural.
 icon: 📈
-image: /images/uploads/29a8834.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790472/29a8834_mdq4od.jpg
 featured: true
 order: 7
 ---
