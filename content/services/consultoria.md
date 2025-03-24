@@ -3,7 +3,7 @@ title: Consultoria
 description: Servicios especializados de consultoría en ingeniería con amplia
   experiencia en proyectos nacionales.
 icon: 📋
-image: /images/uploads/29a8656.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790466/29a8656_atu6en.jpg
 featured: true
 order: 1
 ---
