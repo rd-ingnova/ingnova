@@ -103,7 +103,7 @@ export default function AboutPage() {
                 }`}
               >
                 <div className="w-full md:w-1/3">
-                  <div className="relative mx-8 h-[22rem] sm:mx-0 sm:h-96 rounded-xl overflow-hidden group">
+                  <div className="relative mx-8 md:mx-0 aspect-square rounded-xl overflow-hidden group">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -113,7 +113,7 @@ export default function AboutPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6"></div>
                   </div>
                 </div>
-                <div className="px-8 sm:px-0 w-full md:w-2/3">
+                <div className="px-8 w-full md:w-2/3">
                   <h3 className="text-2xl font-bold mb-2 text-primary-700">
                     {member.name}
                   </h3>

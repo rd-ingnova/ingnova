@@ -25,8 +25,11 @@ export default function MarkdownRaw({
           p: ({ node, ...props }) => (
             <p className={`${className} mb-4`} {...props} />
           ),
+          ul: ({ node, ...props }) => (
+            <ul className="list-disc px-8" {...props} />
+          ),
           li: ({ node, ...props }) => (
-            <li className={`${className} mb-2`} {...props} />
+            <li className={`${className} *:mb-0`} {...props} />
           ),
           img: ({ node, ...props }) => (
             <img
