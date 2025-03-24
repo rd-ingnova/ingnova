@@ -12,7 +12,7 @@ commit_messages:
   openAuthoring: "{{message}}"
 
 site_url: https://rdingnova.com.co
-display_url: Volver a Inicio
+display_url: https://rdingnova.com.co
 locale: "es"
 show_preview_links: false
 
@@ -96,7 +96,7 @@ collections:
 
   # Team - About (Multiple entries)
   - name: "team"
-    label: "Equipo"
+    label: "Personal Clave"
     folder: "content/team"
     create: true
     slug: "{{name}}"

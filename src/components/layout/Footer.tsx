@@ -5,7 +5,7 @@ import {
   FaFacebook,
   FaLinkedin,
   FaInstagram,
-  FaPhone,
+  FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
   FaYoutube,
@@ -90,7 +90,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
                 <span className="text-primary-100">{data.address}</span>
               </li>
               <li className="flex items-center">
-                <FaPhone className="text-primary-400 mr-3 flex-shrink-0" />
+                <FaPhoneAlt className="text-primary-400 mr-3 flex-shrink-0" />
                 <span className="text-primary-100">{data.phone}</span>
               </li>
               <li className="flex items-center">
