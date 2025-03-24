@@ -3,7 +3,7 @@ title: Maniobra de Gateo - Puente Villavicencio
 category: Infraestructura Vial
 description: Ejecución de maniobra de gateo para cambio de neoprenos del puente
   vehicular de la AV. Villavicencio con autopista sur en la ciudad de Bogotá.
-image: /images/uploads/img-20250313-wa0053.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790295/img-20250313-wa0053_gqv43o.jpg
 location: Bogotá, Colombia
 ---
 
