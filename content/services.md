@@ -13,4 +13,6 @@ servicesItems:
   - pruebas_de_carga
   - servicios_especializados
   - instrumentacion
+equipmentItems:
+  - cortadoras_de_ultima_generacion
 ---
