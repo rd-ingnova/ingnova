@@ -6,7 +6,7 @@ description: "Completa el formulario y para ponerte en contacto con nuestro
   equipo a la mayor brevedad. También puedes contactarnos directamente a través
   de los siguientes medios:"
 address: Bogotá D.C., Colombia
-phone: +57 321 301 8486
+phone: +57 312 3018486
 email: rdingnova@gmail.com
 schedule: "Lunes a Viernes: 9:00 - 18:00"
 instagram: rdingnova
