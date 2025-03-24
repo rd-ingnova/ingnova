@@ -5,7 +5,6 @@ description: Servicios especializados de consultoría en ingeniería con amplia
 icon: 📋
 image: /images/uploads/29a8656.jpg
 featured: true
-order: 1
 ---
 Ofrecemos una amplia gama de servicios de consultoría especializada en diversas áreas de la ingeniería y la construcción.
 

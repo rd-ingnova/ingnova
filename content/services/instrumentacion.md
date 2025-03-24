@@ -5,7 +5,6 @@ description: Amplia experiencia en acompañamiento especializado de
 icon: 📈
 image: /images/uploads/29a8834.jpg
 featured: true
-order: 7
 ---
 Contamos con una amplia experiencia en acompañamiento especializado en los siguientes servicios:
 

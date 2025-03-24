@@ -5,7 +5,6 @@ description: Personal con la mayor experiencia en actividades especializadas de
 icon: ⚙️
 image: /images/uploads/img-20250313-wa0051.jpg
 featured: false
-order: 4
 ---
 Contamos con personal con la mayor experiencia en actividades especializadas de la ingeniería: **perforaciones geotécnicas** y **estudios de suelos**, **inyecciones** y **mejoramiento de suelos**, **construcción** y **tensionamiento de pernos** y **anclajes**, **nivelación de estructuras** con **cilindros hidráulicos**, **auscultación estructural**, **reparación de pilotes** y experiencia en **rehabilitación de puentes**.
 

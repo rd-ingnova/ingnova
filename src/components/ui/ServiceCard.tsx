@@ -10,7 +10,6 @@ export interface ServiceProps {
   icon: string;
   image: string;
   featured?: boolean;
-  order: number;
 }
 
 interface ServiceCardProps {
