@@ -1,10 +1,10 @@
 ---
 heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790474/dji_fly_20250218_155336_973_1739912492886_photo_ajspb0.jpg
-heroTitle: " Soluciones de ingeniería para el futuro"
-heroSubtitle: RD INGNOVA combina más de 20 años de experiencia en ingeniería con
-  un enfoque innovador para el desarrollo de proyectos exitosos. Nos
-  especializamos en ofrecer soluciones técnicas avanzadas con un alto compromiso
-  en calidad, sostenibilidad y eficiencia.
+heroTitle: Ingeniería Especializada
+heroSubtitle: INGNOVA SAS, fundada en 2022, cuenta con un equipo con más de 20
+  años de experiencia en proyectos de gran envergadura. Ofrecemos soluciones de
+  ingeniería avanzada con innovación, precisión técnica y compromiso con la
+  calidad y sostenibilidad.
 servicesTitle: Nuestros Servicios
 servicesDescription: Brindamos servicios especializados en consultoría,
   construcción y rehabilitación de infraestructuras, respaldados por tecnología
