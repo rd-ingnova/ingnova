@@ -14,7 +14,7 @@ historyContent: >-
   Desde sus inicios, la empresa ha ejecutado proyectos de alta ingeniería en puentes, cimentaciones, infraestructura vial y rehabilitación estructural, destacándose por la precisión técnica, el uso de tecnología avanzada y el cumplimiento efectivo en cada obra.
 
 
-  Con un firme compromiso con la calidad y la eficiencia, **INGNOVA SAS** continúa creciendo y consolidándose como un referente en la ingeniería civil, desarrollando soluciones innovadoras que contribuyen al desarrollo del país.
+  Con un firme compromiso con la calidad y la eficiencia, continuamos creciendo y consolidándonos como un referente en la ingeniería civil, desarrollando soluciones innovadoras que contribuyen al desarrollo del país.
 historyImage: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790474/dji_0093_piavcq.jpg
 valuesTitle: Nuestros Valores
 valuesDescription: Los principios que nos definen y guían nuestro trabajo
