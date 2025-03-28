@@ -80,6 +80,10 @@
   p {
     @apply text-base/relaxed;
   }
+
+  :not(.text-center) > p {
+    @apply text-justify;
+  }
 }
 
 @layer utilities {

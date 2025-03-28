@@ -12,7 +12,7 @@ import { getMarkup } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Contacto | INGNOVA",
   description:
-    "Ponte en contacto con INGNOVA SAS. Consulta nuestros servicios de ingeniería y consultoría. Estamos aquí para ayudarte.",
+    "Ponte en contacto con INGNOVA Ingeniería Especializada SAS. Consulta nuestros servicios de ingeniería y consultoría. Estamos aquí para ayudarte.",
 };
 
 export default function ContactPage() {

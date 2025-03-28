@@ -4,7 +4,7 @@ import ServicesGrid from "@/components/sections/ServicesGrid";
 import { getMarkup } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "INGNOVA | Ingeniería Especializada",
+  title: "INGNOVA Ingeniería Especializada SAS",
   description:
     "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
 };

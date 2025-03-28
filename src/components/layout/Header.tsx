@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -70,7 +69,8 @@ const Header = () => {
             <Image
               height={61}
               width={180}
-              src={isScrolled ? "/logo_primary.png" : "/logo_secondary.png"}
+              // src={isScrolled ? "/logo_primary.png" : "/logo_secondary.PNG"}
+              src="/logo_secondary.jpg"
               className="hidden lg:block"
               alt="Logo de INGNOVA SAS"
             />
