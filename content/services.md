@@ -1,5 +1,5 @@
 ---
-heroBg: https://images.unsplash.com/photo-1504307651254-35680f356dfd
+heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1743204151/_29A8656_zjwksc.jpg
 heroTitle: Nuestros Servicios
 heroSubtitle: Soluciones integrales de ingeniería para cada etapa de su proyecto
 servicesTitle: Servicios Profesionales
