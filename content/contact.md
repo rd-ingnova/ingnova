@@ -8,7 +8,7 @@ description: "Completa el formulario y para ponerte en contacto con nuestro
 address: Bogotá D.C., Colombia
 phone: +57 312 3018486
 email: rdingnova@gmail.com
-schedule: "Lunes a Viernes: 9:00 - 18:00"
+schedule: "Lunes a Sábado: 7:00 - 18:00"
 instagram: rdingnova
 facebook: https://www.instagram.com/rdingnova
 linkedin: https://www.linkedin.com/in/rd-ingnova-81344b27a/
