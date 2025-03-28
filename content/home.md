@@ -1,10 +1,11 @@
 ---
 heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790474/dji_fly_20250218_155336_973_1739912492886_photo_ajspb0.jpg
-heroTitle: Ingeniería Especializada
-heroSubtitle: INGNOVA SAS, fundada en 2022, cuenta con un equipo con más de 20
-  años de experiencia en proyectos de gran envergadura. Ofrecemos soluciones de
-  ingeniería avanzada con innovación, precisión técnica y compromiso con la
-  calidad y sostenibilidad.
+heroTitle: INGNOVA Ingeniería Especializada SAS
+heroSubtitle: Fundada en 2022, es una empresa respaldada por un equipo de
+  profesionales con más de 20 años de experiencia en la dirección y ejecución de
+  proyectos de alta ingeniería a nivel nacional. Nos especializamos en ofrecer
+  soluciones innovadoras con equipos de tecnología de vanguardia, garantizando
+  precisión técnica, calidad, eficiencia y sostenibilidad en cada desarrollo.
 servicesTitle: Nuestros Servicios
 servicesDescription: Brindamos servicios especializados en consultoría,
   construcción y rehabilitación de infraestructuras, respaldados por tecnología
