@@ -11,7 +11,6 @@ servicesItems:
   - concretos_especiales
   - consultoria
   - pruebas_de_carga
-  - servicios_especializados
   - instrumentacion
 equipmentTitle: Equipos
 equipmentContent: Contamos con equipos de última generación para garantizar la
