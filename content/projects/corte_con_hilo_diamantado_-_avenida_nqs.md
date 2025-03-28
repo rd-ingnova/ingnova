@@ -3,7 +3,7 @@ title: Corte con Hilo Diamantado - Avenida NQS
 category: Infraestructura Vial
 description: Ejecución de actividades de corte con hilo diamantado, maniobras de
   apuntalamiento y operación de gateo para instalación de aisladores sísmicos.
-image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790471/29a8870_mokbem.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790472/29a8834_mdq4od.jpg
 location: Avenida NQS por calle sexta, Bogotá
 date: ""
 ---
