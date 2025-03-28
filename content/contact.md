@@ -5,7 +5,7 @@ heroSubtitle: Estamos aquí para ayudarte con tu próximo proyecto
 description: "Completa el formulario y para ponerte en contacto con nuestro
   equipo a la mayor brevedad. También puedes contactarnos directamente a través
   de los siguientes medios:"
-address: Bogotá D.C., Colombia
+address: Bogotá, D.C., Colombia
 phone: +57 312 3018486
 email: rdingnova@gmail.com
 schedule: "Lunes a Sábado: 7:00 - 18:00"
