@@ -3,7 +3,7 @@ heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1743204151/_29A8656_z
 heroTitle: Nuestros Servicios
 heroSubtitle: Soluciones integrales de ingeniería para cada etapa de su proyecto
 servicesTitle: Servicios Profesionales
-servicesContent: En INGNOVA Ingeniería Especializada SAS ofrecemos una amplia
+servicesContent: En INGNOVA INGENIERÍA ESPECIALIZADA SAS ofrecemos una amplia
   gama de servicios de ingeniería y consultoría, adaptados a las necesidades
   específicas de cada cliente y sector.
 servicesItems:
