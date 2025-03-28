@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "INGNOVA | Ingeniería Especializada",
     description:
       "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
-    siteName: "INGNOVA SAS",
+    siteName: "INGNOVA Ingeniería Especializada SAS",
     locale: "es_ES",
     type: "website",
   },

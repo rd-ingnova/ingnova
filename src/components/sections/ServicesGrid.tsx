@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import ServiceCard, { ServiceProps } from "@/components/ui/ServiceCard";
 import { motion } from "framer-motion";

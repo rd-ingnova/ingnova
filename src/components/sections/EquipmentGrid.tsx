@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import EquipmentCard, { EquipmentProps } from "@/components/ui/EquipmentCard";
 import { motion } from "framer-motion";
