@@ -1,7 +1,7 @@
 ---
 name: Orlando Real
-position: Ingeniero Director
-image: https://media.licdn.com/dms/image/v2/D4D03AQHSa9oL1eodKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689689936041?e=1747872000&v=beta&t=RygAkWMnFtZD7keUWpZpE72k_-o12gMahKJrzYHEW-4
+position: Gerente General
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1743203844/IMG-20250328-WA0008_1_qsopkd.jpg
 bio: >-
   Profesional con una vasta experiencia en direccionamiento de grupos de trabajo
   para la ejecución de obras de gran envergadura, con un criterio agudo para
@@ -14,14 +14,13 @@ bio: >-
   Ha sido director de interventoría para proyectos como:
 
 
-  - Corredor Verde en Bogotá
+  * Corredor Verde en Bogotá
 
+  * Construcción para la adecuación al sistema Transmilenio de la Avenida Congreso Eucarístico (Carrera 68)
 
-  - Construcción para la adecuación al sistema Transmilenio de la Avenida Congreso Eucarístico (Carrera 68)
+  * Puente Pumarejo: "El coloso del Caribe"
 
+  * Side Manager para el Proyecto P135 de OCENSA
 
-  - Proyecto Invías con un presupuesto de 160 mil millones incluyendo 6.5 km de vía en doble calzada
-
-
-  - Puente Pumarejo: "El coloso del Caribe"
+  * Entre otros
 ---
