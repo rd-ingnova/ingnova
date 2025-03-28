@@ -3,7 +3,7 @@ title: Micropilotes y Reforzamiento - Autopista Norte
 category: Infraestructura Vial
 description: Construcción de 60 micropilotes de 0.2 m de diámetro y 21 metros de
   profundidad y reforzamiento estructural con fibra de carbono en puente.
-image: /images/uploads/img-20250313-wa0066.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790462/img-20250313-wa0066_ercol7.jpg
 location: Autopista Norte con calle 134, Bogotá
 ---
 ## Desafío inicial

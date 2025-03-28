@@ -3,7 +3,7 @@ title: Pruebas de Carga
 description: Ejecutamos pruebas de carga en estructuras y hacemos seguimiento
   durante su vida útil de operación.
 icon: 🏋️‍♂️
-image: /images/uploads/img-20250313-wa0054.jpg
+image: https://res.cloudinary.com/dtlfttst9/image/upload/v1743200348/0f66614232cd451cbbcabd9b6cbff5b7_1_rmwh5e.jpg
 featured: true
 ---
 Ejecutamos pruebas de carga en estructuras y hacemos seguimiento durante su vida útil de operación para llevar una trazabilidad que permite la comparación con los valores teóricos, con el fin de evaluar sus índices de comportamiento en el tiempo.
