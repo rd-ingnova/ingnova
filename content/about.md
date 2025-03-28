@@ -1,5 +1,5 @@
 ---
-heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790472/img-20250313-wa0040_wpdtiw.jpg
+heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1743204837/IMG-20250328-WA0009_1_xzbcwy.jpg
 heroTitle: Sobre Nosotros
 heroSubtitle: Sólido respaldo técnico con profesionales expertos
 historyTitle: Nuestra Historia
