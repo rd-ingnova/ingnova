@@ -4,7 +4,7 @@ heroTitle: Sobre Nosotros
 heroSubtitle: Sólido respaldo técnico con profesionales expertos
 historyTitle: Nuestra Historia
 historyContent: >-
-  INGNOVA Ingeniería Especializada SAS es una empresa colombiana joven con la
+  INGNOVA INGENIERÍA ESPECIALIZADA SAS es una empresa colombiana joven con la
   visión de transformar el sector de la ingeniería a través de la innovación, la
   experiencia y un enfoque técnico en cada proyecto. Fundada en 2022, cuenta con
   un equipo con más de 20 años de trayectoria liderando proyectos de gran
