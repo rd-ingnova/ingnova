@@ -1,5 +1,5 @@
 ---
-heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790467/29a8712_kud3oz.jpg
+heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1743209127/D3B63229-C1B6-4895-98FB-E13F4EAC7108_wm6h1l.jpg
 heroTitle: Nuestros Proyectos
 heroSubtitle: Experiencia y calidad comprobada.
 projectsTitle: Proyectos Ejecutados
