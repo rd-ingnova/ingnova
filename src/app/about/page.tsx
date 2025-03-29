@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import AboutHero from "@/components/sections/AboutHero";
 import Image from "next/image";
 import { getMarkup } from "@/lib/utils";
 import MarkdownRaw from "@/components/ui/MarkdownRaw";

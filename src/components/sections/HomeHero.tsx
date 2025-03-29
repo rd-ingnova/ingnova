@@ -25,7 +25,7 @@ const HomeHero: React.FC<MarkupData> = ({ data }) => {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-20">
         <div className="flex flex-col max-w-3xl">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -34,7 +34,7 @@ const HomeHero: React.FC<MarkupData> = ({ data }) => {
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-white/90 mb-8"
+            className="text-sm md:text-xl text-white/90 mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
