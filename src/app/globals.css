@@ -78,11 +78,11 @@
   }
 
   p {
-    @apply text-base/relaxed;
+    @apply text-base/relaxed text-justify;
   }
 
-  :not(.text-center) > p {
-    @apply text-justify;
+  .text-center p {
+    @apply text-center;
   }
 }
 

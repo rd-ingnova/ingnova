@@ -3,6 +3,7 @@ import AboutHero from "@/components/sections/AboutHero";
 import Image from "next/image";
 import { getMarkup } from "@/lib/utils";
 import MarkdownRaw from "@/components/ui/MarkdownRaw";
+import Hero from "@/components/ui/Hero";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros | INGNOVA",
@@ -26,7 +27,12 @@ export default function AboutPage() {
 
   return (
     <>
-      <AboutHero data={data} />
+      <Hero
+        title={data.heroTitle}
+        subtitle={data.heroSubtitle}
+        imageUrl={data.heroBg}
+        alignment="center"
+      />
 
       {/* Historia de la empresa */}
       <section className="section bg-white">
