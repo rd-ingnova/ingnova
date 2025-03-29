@@ -20,7 +20,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Columna 1: Información de la empresa */}
           <div>
-            <h3 className="text-2xl font-bold mb-6">INGNOVA Ingeniería Especializada SAS</h3>
+            <h3 className="text-2xl font-bold mb-6">INGNOVA INGENIERÍA ESPECIALIZADA SAS</h3>
             <p className="text-primary-100 mb-6">
               Empresa líder en servicios de ingeniería y consultoría, ofreciendo
               soluciones innovadoras para proyectos de infraestructura.
@@ -108,7 +108,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
 
         {/* Barra de copyright */}
         <div className="border-t border-primary-800 mt-12 pt-8 text-center text-primary-300">
-          <p>© {currentYear} INGNOVA Ingeniería Especializada SAS. Todos los derechos reservados.</p>
+          <p>© {currentYear} INGNOVA INGENIERÍA ESPECIALIZADA SAS. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
