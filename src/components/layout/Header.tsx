@@ -52,25 +52,19 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo Móvil */}
+          {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              height={61}
-              width={180}
-              src={
-                isScrolled || isMenuOpen
-                  ? "/logo_primary.png"
-                  : "/logo_secondary.png"
-              }
-              className="lg:hidden"
+              height={40}
+              width={130}
+              src="/logo.jpg"
+              className="lg:hidden block"
               alt="Logo de INGNOVA SAS"
             />
-            {/* Logo Desktop */}
             <Image
               height={61}
               width={180}
-              // src={isScrolled ? "/logo_primary.png" : "/logo_secondary.PNG"}
-              src="/logo_secondary.jpg"
+              src="/logo.jpg"
               className="hidden lg:block"
               alt="Logo de INGNOVA SAS"
             />
