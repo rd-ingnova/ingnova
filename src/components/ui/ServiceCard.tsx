@@ -49,6 +49,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center"
           >
             Más información
+            <span className="sr-only">sobre {service.title}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-1"
