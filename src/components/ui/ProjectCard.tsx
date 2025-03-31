@@ -79,6 +79,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center"
           >
             Ver detalles
+            <span className="sr-only">sobre {project.title}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-1"
