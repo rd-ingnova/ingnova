@@ -1,5 +1,5 @@
 ---
-title: Aislamiento Sísmico - Proyecto Conexión Norte
+title: REFORZAMIENTO ESTRUCTURAL Y AISLAMIENTO SÍSMICO - PROYECTO CONEXIÓN NORTE
 category: Infraestructura Vial
 description: Construcción del aislamiento sísmico y ménsulas de transferencia de
   puente 5, localizado en el K4+983.800 del proyecto vial "Conexión Norte
