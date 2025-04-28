@@ -5,7 +5,7 @@ description: Servicio de tensionamiento postensado con equipos propios, operados
   técnico.
 icon: INGNOVA
 image: https://res.cloudinary.com/dtlfttst9/image/upload/v1745848991/WhatsApp_Image_2025-04-28_at_9.02.51_AM_j2c0eh.jpg
-featured: false
+featured: true
 ---
 En INGNOVA SAS ofrecemos servicios de tensionamiento con equipos de última generación, operados por nuestro equipo técnico altamente capacitado. Gracias a nuestra autonomía operativa, aseguramos mayor eficiencia en obra, reducción de tiempos y cumplimiento estricto de especificaciones.
 
