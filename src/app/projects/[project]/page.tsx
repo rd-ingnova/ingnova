@@ -112,7 +112,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
                     <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
                     <a
                       href={`/projects/${project.slug}`}
-                      className="text-primary-600 font-medium hover:text-primary-800">
+                      className="text-primary-600 font-medium hover:text-primary-800 flex items-center">
                       Ver detalles
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

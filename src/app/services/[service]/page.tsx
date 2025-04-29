@@ -78,7 +78,7 @@ export default async function ServicePage({ params }: ServiceParams) {
                     <p className="text-gray-600 mb-4 line-clamp-2">{service.excerpt}</p>
                     <a
                       href={`/services/${service.slug}`}
-                      className="text-primary-600 font-medium hover:text-primary-800">
+                      className="text-primary-600 font-medium hover:text-primary-800 flex items-center">
                       Ver más
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
