@@ -21,7 +21,7 @@ export default function HomeHero({ data }: MarkupData) {
       </div>
 
       {/* Contenido */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-20 pt-8">
         <div className="flex flex-col max-w-3xl">
           <motion.h1
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6"

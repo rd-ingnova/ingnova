@@ -38,6 +38,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
         subtitle={data.description}
         imageUrl={data.image}
         alignment="center"
+        topMargin={true}
       />
 
       <section className="section bg-white">
@@ -96,7 +97,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {getRelatedContent(resolvedParams.project, '/content/projects').map(
               (project: any, index: number) => (
-                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden h-min">
                   {project.image && (
                     <div className="aspect-video overflow-hidden">
                       <img
@@ -108,10 +109,10 @@ export default async function ProjectPage({ params }: ProjectParams) {
                   )}
                   <div className="p-6">
                     <div className="text-sm text-primary-600 mb-2">{project.category}</div>
-                    <h3 className="text-xl font-semibold mb-2 text-primary-700">{project.title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-primary-700">{project.title}</h3>
+                    <p className="text-gray-600 mb-4">{project.description}</p>
                     <a
-                      href={`/projects/${project.slug}`}
+                      href={`/projects/${project.filename}`}
                       className="text-primary-600 font-medium hover:text-primary-800 flex items-center">
                       Ver detalles
                       <svg
