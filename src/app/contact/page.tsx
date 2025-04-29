@@ -1,29 +1,21 @@
-import { Metadata } from "next";
-import Hero from "@/components/ui/Hero";
-import ContactForm from "@/components/ui/ContactForm";
-import {
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaClock,
-  FaPhoneAlt,
-} from "react-icons/fa";
-import { getMarkup } from "@/lib/utils";
+import { Metadata } from 'next';
+import Hero from '@/components/ui/Hero';
+import ContactForm from '@/components/ui/ContactForm';
+import { FaMapMarkerAlt, FaEnvelope, FaClock, FaPhoneAlt } from 'react-icons/fa';
+import { getArrayMarkups, getMarkup } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: "Contacto | INGNOVA",
+  title: 'Contacto | INGNOVA',
   description:
-    "Ponte en contacto con INGNOVA Ingeniería Especializada SAS. Consulta nuestros servicios de ingeniería y consultoría. Estamos aquí para ayudarte.",
+    'Ponte en contacto con INGNOVA Ingeniería Especializada SAS. Consulta nuestros servicios de ingeniería y consultoría. Estamos aquí para ayudarte.',
 };
 
 export default function ContactPage() {
-  const contact_md = getMarkup("/content", "contact.md");
+  const markdown = getMarkup('/content', 'contact.md');
+  if (!markdown) return null;
 
-  if (!contact_md) return null;
-  const { data } = contact_md;
-
-  const faqs = data.faqItems.map(
-    (filename: string) => getMarkup("/content/faqs", `${filename}.md`)?.data
-  );
+  const { data } = markdown;
+  const faqs = getArrayMarkups(data.faqItems, '/content/faqs');
 
   return (
     <>
@@ -38,31 +30,29 @@ export default function ContactPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-primary-800">
-                Ponte en Contacto
-              </h2>
+              <h2 className="text-3xl font-bold mb-6 text-primary-800">Ponte en Contacto</h2>
               <p className="text-gray-600 mb-8">{data.description}</p>
 
               <div className="space-y-6">
                 {[
                   {
                     icon: <FaMapMarkerAlt size={20} />,
-                    title: "Dirección",
+                    title: 'Dirección',
                     content: data.address,
                   },
                   {
                     icon: <FaPhoneAlt size={20} />,
-                    title: "Teléfono",
+                    title: 'Teléfono',
                     content: data.phone,
                   },
                   {
                     icon: <FaEnvelope size={20} />,
-                    title: "Email",
+                    title: 'Email',
                     content: data.email,
                   },
                   {
                     icon: <FaClock size={20} />,
-                    title: "Horario",
+                    title: 'Horario',
                     content: data.schedule,
                   },
                 ].map((item, index) => (
@@ -71,9 +61,7 @@ export default function ContactPage() {
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg text-gray-800 mb-1">
-                        {item.title}
-                      </h3>
+                      <h3 className="font-semibold text-lg text-gray-800 mb-1">{item.title}</h3>
                       <p className="text-gray-600">{item.content}</p>
                     </div>
                   </div>
@@ -82,9 +70,7 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl">
-              <h3 className="text-2xl font-bold mb-6 text-primary-800">
-                Formulario de Contacto
-              </h3>
+              <h3 className="text-2xl font-bold mb-6 text-primary-800">Formulario de Contacto</h3>
               <ContactForm email={data.email} />
             </div>
           </div>
@@ -115,21 +101,17 @@ export default function ContactPage() {
       <section className="section bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-primary-800">
-              Preguntas Frecuentes
-            </h2>
+            <h2 className="text-3xl font-bold mb-4 text-primary-800">Preguntas Frecuentes</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Aquí encontrarás respuestas a las preguntas más comunes sobre
-              nuestros servicios y proceso de trabajo.
+              Aquí encontrarás respuestas a las preguntas más comunes sobre nuestros servicios y
+              proceso de trabajo.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {faqs.map((faq: any, index: number) => (
               <div key={index} className="border-b border-gray-200 pb-6">
-                <h3 className="text-xl font-semibold mb-2 text-primary-700">
-                  {faq.question}
-                </h3>
+                <h3 className="text-xl font-semibold mb-2 text-primary-700">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
             ))}

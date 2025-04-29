@@ -1,28 +1,22 @@
-import { Metadata } from "next";
-import HomeHero from "@/components/sections/HomeHero";
-import ServicesGrid from "@/components/sections/ServicesGrid";
-import { getMarkup } from "@/lib/utils";
+import { Metadata } from 'next';
+import HomeHero from '@/components/sections/HomeHero';
+import ServicesGrid from '@/components/sections/ServicesGrid';
+import { getArrayMarkups, getMarkup } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: "INGNOVA SAS",
+  title: 'INGNOVA SAS',
   description:
-    "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
+    'Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.',
 };
 
 export default function Home() {
-  const home_md = getMarkup("/content", "home.md"),
-    services_md = getMarkup("/content", "services.md");
+  const markdown = getMarkup('/content', 'home.md'),
+    services_markdown = getMarkup('/content', 'services.md');
+  if (!markdown || !services_markdown) return null;
 
-  if (!home_md || !services_md) return null;
-  const {data} = home_md;
-
-  const services = services_md.data.servicesItems.map(
-    (filename: string) => getMarkup("/content/services", `${filename}.md`)?.data
-  );
-
-  const stats = data.statsItems.map(
-    (filename: string) => getMarkup("/content/stats", `${filename}.md`)?.data
-  );
+  const { data } = markdown;
+  const stats = getArrayMarkups(data.statsItems, '/content/stats');
+  const services = getArrayMarkups(services_markdown.data.servicesItems, '/content/services');
 
   return (
     <>
@@ -33,9 +27,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="mb-4 text-primary-800">{data.servicesTitle}</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              {data.servicesDescription}
-            </p>
+            <p className="text-gray-600 max-w-3xl mx-auto">{data.servicesDescription}</p>
           </div>
 
           <ServicesGrid showFeaturedOnly={true} data={services} />
@@ -67,9 +59,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="bg-primary-50 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-2/3 mb-6 md:mb-0">
-              <h2 className="text-3xl mb-4 text-primary-800">
-                {data.ctaTitle}
-              </h2>
+              <h2 className="text-3xl mb-4 text-primary-800">{data.ctaTitle}</h2>
               <p className="text-gray-600">{data.ctaDescription}</p>
             </div>
             <div>

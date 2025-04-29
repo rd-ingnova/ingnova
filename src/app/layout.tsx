@@ -1,48 +1,43 @@
-import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { getMarkup } from "@/lib/utils";
+import type { Metadata } from 'next';
+import { Inter, Montserrat } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import { getMarkup } from '@/lib/utils';
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
 });
 
 const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rdingnova.com.co/"),
-  title: "INGNOVA | Ingeniería Especializada",
+  metadataBase: new URL('https://rdingnova.com.co/'),
+  title: 'INGNOVA | Ingeniería Especializada',
   description:
-    "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
-  keywords:
-    "ingeniería, consultoría, construcción, rehabilitación, proyectos, infraestructura",
+    'Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.',
+  keywords: 'ingeniería, consultoría, construcción, rehabilitación, proyectos, infraestructura',
   openGraph: {
-    title: "INGNOVA | Ingeniería Especializada",
+    title: 'INGNOVA | Ingeniería Especializada',
     description:
-      "Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.",
-    siteName: "INGNOVA Ingeniería Especializada SAS",
-    locale: "es_ES",
-    type: "website",
+      'Empresa líder en servicios de ingeniería, consultoría y construcción. Soluciones innovadoras para proyectos de infraestructura.',
+    siteName: 'INGNOVA Ingeniería Especializada SAS',
+    locale: 'es_ES',
+    type: 'website',
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const contact_md = getMarkup("/content", "contact.md");
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const markdown = getMarkup('/content', 'contact.md');
+  if (!markdown) return null;
 
-  if (!contact_md) return null;
-  const data = contact_md.data;
+  const { data } = markdown;
 
   return (
     <html lang="es" className={`${inter.variable} ${montserrat.variable}`}>

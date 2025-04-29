@@ -1,28 +1,20 @@
-import { Metadata } from "next";
-import Hero from "@/components/ui/Hero";
-import { getMarkup } from "@/lib/utils";
-import MarkdownRaw from "@/components/ui/MarkdownRaw";
+import { Metadata } from 'next';
+import Hero from '@/components/ui/Hero';
+import { getMarkup } from '@/lib/utils';
+import MarkdownRaw from '@/components/ui/MarkdownRaw';
 
 type EquipmentParams = {
-  params: Promise<{
-    equipment: string;
-  }>;
+  params: Promise<{ equipment: string }>;
 };
 
-export async function generateMetadata({
-  params,
-}: EquipmentParams): Promise<Metadata> {
+export async function generateMetadata({ params }: EquipmentParams): Promise<Metadata> {
   const resolvedParams = await params;
-  const equipmentData = getMarkup(
-    "/content/equipment",
-    `${resolvedParams.equipment}.md`
-  )?.data;
+  const equipmentData = getMarkup('/content/equipment', `${resolvedParams.equipment}.md`)?.data;
 
   if (!equipmentData) {
     return {
-      title: "Equipo no encontrado | INGNOVA",
-      description:
-        "El equipo solicitado no existe o no está disponible actualmente.",
+      title: 'Equipo no encontrado | INGNOVA',
+      description: 'El equipo solicitado no existe o no está disponible actualmente.',
     };
   }
 
@@ -34,13 +26,10 @@ export async function generateMetadata({
 
 export default async function EquipmentPage({ params }: EquipmentParams) {
   const resolvedParams = await params;
-  const equipment_md = getMarkup(
-    "/content/equipment",
-    `${resolvedParams.equipment}.md`
-  );
+  const markdown = getMarkup('/content/equipment', `${resolvedParams.equipment}.md`);
+  if (!markdown) return null;
 
-  if (!equipment_md) return null;
-  const { data, content } = equipment_md;
+  const { data, content } = markdown;
 
   return (
     <>
@@ -55,10 +44,7 @@ export default async function EquipmentPage({ params }: EquipmentParams) {
         <div className="container-custom">
           <div className="grid grid-cols-1 gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold mb-6 text-primary-800">
-                Descripción del Equipo
-              </h2>
-
+              <h2 className="text-3xl font-bold mb-6 text-primary-800">Descripción del Equipo</h2>
               <MarkdownRaw className="lg:text-lg">{content}</MarkdownRaw>
             </div>
           </div>

@@ -1,7 +1,6 @@
-"use client";
-import React from "react";
-import ServiceCard, { ServiceProps } from "@/components/ui/ServiceCard";
-import { motion } from "framer-motion";
+'use client';
+import ServiceCard, { ServiceProps } from '@/components/ui/ServiceCard';
+import { motion } from 'framer-motion';
 
 interface ServicesGridProps {
   showFeaturedOnly?: boolean;
@@ -18,10 +17,7 @@ const container = {
   },
 };
 
-const ServicesGrid: React.FC<ServicesGridProps> = ({
-  showFeaturedOnly = false,
-  data,
-}) => {
+export default function ServicesGrid({ showFeaturedOnly = false, data }: ServicesGridProps) {
   const services = data;
 
   // Filtrar servicios según la prop
@@ -35,13 +31,10 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-    >
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {displayedServices.map((service, index) => (
         <ServiceCard key={index} service={service} />
       ))}
     </motion.div>
   );
-};
-
-export default ServicesGrid;
+}

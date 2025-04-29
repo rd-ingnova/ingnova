@@ -1,6 +1,6 @@
-"use client";
-import { MarkupData } from "@/lib/utils";
-import Link from "next/link";
+'use client';
+import { MarkupData } from '@/lib/utils';
+import Link from 'next/link';
 import {
   FaFacebook,
   FaLinkedin,
@@ -9,9 +9,9 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaYoutube,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
-const Footer: React.FC<MarkupData> = ({ data }) => {
+export default function Footer({ data }: MarkupData) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -22,8 +22,8 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
           <div>
             <h3 className="text-2xl font-bold mb-6">INGNOVA INGENIERÍA ESPECIALIZADA SAS</h3>
             <p className="text-primary-100 mb-6">
-              Empresa líder en servicios de ingeniería y consultoría, ofreciendo
-              soluciones innovadoras para proyectos de infraestructura.
+              Empresa líder en servicios de ingeniería y consultoría, ofreciendo soluciones
+              innovadoras para proyectos de infraestructura.
             </p>
 
             <div className="flex space-x-4">
@@ -49,8 +49,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
                   key={link.href}
                   href={link.href}
                   aria-label="Facebook"
-                  className="text-primary-100 hover:text-white transition-colors"
-                >
+                  className="text-primary-100 hover:text-white transition-colors">
                   {link.icon}
                 </a>
               ))}
@@ -62,18 +61,17 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
             <h3 className="text-xl font-bold mb-6">Enlaces Rápidos</h3>
             <div className="flex flex-wrap gap-6">
               {[
-                { name: "Inicio", href: "/" },
-                { name: "Sobre Nosotros", href: "/about" },
-                { name: "Servicios", href: "/services" },
-                { name: "Proyectos", href: "/projects" },
-                { name: "Contacto", href: "/contact" },
-                { name: "Admin", href: "/admin" },
+                { name: 'Inicio', href: '/' },
+                { name: 'Sobre Nosotros', href: '/about' },
+                { name: 'Servicios', href: '/services' },
+                { name: 'Proyectos', href: '/projects' },
+                { name: 'Contacto', href: '/contact' },
+                { name: 'Admin', href: '/admin' },
               ].map((link) => (
                 <div key={link.href} className="flex-shrink-0">
                   <Link
                     href={link.href}
-                    className="text-primary-100 hover:text-white transition-colors"
-                  >
+                    className="text-primary-100 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </div>
@@ -97,8 +95,7 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
                 <FaEnvelope className="text-primary-400 mr-3 flex-shrink-0" />
                 <a
                   href={`mailto:${data.email}`}
-                  className="text-primary-100 hover:text-white transition-colors"
-                >
+                  className="text-primary-100 hover:text-white transition-colors">
                   {data.email}
                 </a>
               </li>
@@ -108,11 +105,11 @@ const Footer: React.FC<MarkupData> = ({ data }) => {
 
         {/* Barra de copyright */}
         <div className="border-t border-primary-800 mt-12 pt-8 text-center text-primary-300">
-          <p>© {currentYear} INGNOVA INGENIERÍA ESPECIALIZADA SAS. Todos los derechos reservados.</p>
+          <p>
+            © {currentYear} INGNOVA INGENIERÍA ESPECIALIZADA SAS. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

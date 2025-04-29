@@ -1,28 +1,20 @@
-import { Metadata } from "next";
-import Hero from "@/components/ui/Hero";
-import { getMarkup } from "@/lib/utils";
-import MarkdownRaw from "@/components/ui/MarkdownRaw";
+import { Metadata } from 'next';
+import Hero from '@/components/ui/Hero';
+import { getMarkup, getRelatedContent } from '@/lib/utils';
+import MarkdownRaw from '@/components/ui/MarkdownRaw';
 
 type ServiceParams = {
-  params: Promise<{
-    service: string;
-  }>;
+  params: Promise<{ service: string }>;
 };
 
-export async function generateMetadata({
-  params,
-}: ServiceParams): Promise<Metadata> {
+export async function generateMetadata({ params }: ServiceParams): Promise<Metadata> {
   const resolvedParams = await params;
-  const serviceData = getMarkup(
-    "/content/services",
-    `${resolvedParams.service}.md`
-  )?.data;
+  const serviceData = getMarkup('/content/services', `${resolvedParams.service}.md`)?.data;
 
   if (!serviceData) {
     return {
-      title: "Servicio no encontrado | INGNOVA",
-      description:
-        "El servicio solicitado no existe o no está disponible actualmente.",
+      title: 'Servicio no encontrado | INGNOVA',
+      description: 'El servicio solicitado no existe o no está disponible actualmente.',
     };
   }
 
@@ -34,13 +26,10 @@ export async function generateMetadata({
 
 export default async function ServicePage({ params }: ServiceParams) {
   const resolvedParams = await params;
-  const service_md = getMarkup(
-    "/content/services",
-    `${resolvedParams.service}.md`
-  );
+  const markdown = getMarkup('/content/services', `${resolvedParams.service}.md`);
+  if (!markdown) return null;
 
-  if (!service_md) return null;
-  const { data, content } = service_md;
+  const { data, content } = markdown;
 
   return (
     <>
@@ -55,9 +44,7 @@ export default async function ServicePage({ params }: ServiceParams) {
         <div className="container-custom">
           <div className="grid grid-cols-1 gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold mb-6 text-primary-800">
-                Descripción del Servicio
-              </h2>
+              <h2 className="text-3xl font-bold mb-6 text-primary-800">Descripción del Servicio</h2>
 
               <MarkdownRaw className="lg:text-lg">{content}</MarkdownRaw>
             </div>
@@ -74,12 +61,9 @@ export default async function ServicePage({ params }: ServiceParams) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* We'll fetch and display related services here */}
-            {getRelatedServices(resolvedParams.service).map(
+            {getRelatedContent(resolvedParams.service, 'services').map(
               (service: any, index: any) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-lg shadow-md overflow-hidden"
-                >
+                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                   {service.coverImage && (
                     <div className="aspect-video overflow-hidden">
                       <img
@@ -90,16 +74,11 @@ export default async function ServicePage({ params }: ServiceParams) {
                     </div>
                   )}
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 text-primary-700">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2">
-                      {service.excerpt}
-                    </p>
+                    <h3 className="text-xl font-semibold mb-2 text-primary-700">{service.title}</h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2">{service.excerpt}</p>
                     <a
                       href={`/services/${service.slug}`}
-                      className="text-primary-600 font-medium hover:text-primary-800"
-                    >
+                      className="text-primary-600 font-medium hover:text-primary-800">
                       Ver más →
                     </a>
                   </div>
@@ -117,45 +96,14 @@ export default async function ServicePage({ params }: ServiceParams) {
             ¿Necesita más información sobre este servicio?
           </h2>
           <p className="max-w-2xl mx-auto mb-8">
-            Nuestro equipo está listo para responder todas sus preguntas y
-            proporcionarle una solución adaptada a sus necesidades.
+            Nuestro equipo está listo para responder todas sus preguntas y proporcionarle una
+            solución adaptada a sus necesidades.
           </p>
-          <a
-            href="/contact"
-            className="btn bg-white text-primary-900 hover:bg-gray-100"
-          >
+          <a href="/contact" className="btn bg-white text-primary-900 hover:bg-gray-100">
             Contactar Ahora
           </a>
         </div>
       </section>
     </>
   );
-}
-
-// Helper function to get related services
-function getRelatedServices(currentServiceSlug: string, limit: number = 3) {
-  const services_md = getMarkup("/content", "services.md");
-  if (!services_md) return [];
-
-  const servicesItems = services_md.data.servicesItems || [];
-
-  // Get service data for all services except the current one
-  const allServices = servicesItems
-    .map((filename: string) => {
-      const serviceData = getMarkup(
-        "/content/services",
-        `${filename}.md`
-      )?.data;
-      if (serviceData) {
-        return {
-          ...serviceData,
-          slug: filename,
-        };
-      }
-      return null;
-    })
-    .filter((service: any) => service && service.slug !== currentServiceSlug);
-
-  // Return a limited number of related services
-  return allServices.sort(() => 0.5 - Math.random()).slice(0, limit);
 }
