@@ -9,14 +9,8 @@ address: Bogotá, D.C., Colombia
 phone: +57 312 3018486
 email: rdingnova@gmail.com
 schedule: "Lunes a Sábado: 7:00 - 18:00"
-instagram: rdingnova
-facebook: https://www.instagram.com/rdingnova
+instagram: https://www.instagram.com/rdingnova
+facebook: https://www.facebook.com/rdingnova
 linkedin: https://www.linkedin.com/in/rd-ingnova-81344b27a/
 youtube: https://www.youtube.com/@rdingnova
-faqItems:
-  - ¿en_que_zonas_del_pais_operan
-  - ¿cual_es_su_experiencia_en_rehabilitacion_de_puentes
-  - ¿que_servicios_de_instrumentacion_ofrecen
-  - ¿que_tipos_de_concretos_especiales_manejan
-  - ¿que_tipos_de_proyectos_realizan
 ---

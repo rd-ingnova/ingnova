@@ -9,10 +9,4 @@ projectsContent: A continuación, presentamos algunos de los proyectos
   ejecución. Entre  los clientes que han confiado en nosotros se encuentran Pyt
   Puentes y Torones SAS, Concrearmado, Concesión Conexión Norte y SFISA
   INGENIERÍA.
-projectsItems:
-  - maniobra_de_gateo_-_puente_villavicencio
-  - aislamiento_sismico_-_proyecto_conexion_norte
-  - corte_con_hilo_diamantado_-_avenida_nqs
-  - micropilotes_y_reforzamiento_-_autopista_norte
-  - reforzamiento_estructural_-_puente_transmilenio
 ---

@@ -15,8 +15,4 @@ ctaDescription: Estamos listos para asesorarte en tu próximo proyecto.
   Escríbenos y nuestro equipo de expertos te brindará soluciones adaptadas a tus
   necesidades.
 ctaButton: Contáctanos ahora
-statsItems:
-  - anos_de_experiencia_del_personal
-  - empresas_que_han_confiado_en_nosotros
-  - proyectos_completados
 ---

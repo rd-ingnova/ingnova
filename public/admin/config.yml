@@ -39,12 +39,7 @@ collections:
       - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Ícono", name: "icon", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
-      - {
-          label: "Destacado",
-          name: "featured",
-          widget: "boolean",
-          default: false,
-        }
+      - { label: "Destacado", name: "featured", widget: "boolean", default: false }
       - { label: "Contenido", name: "body", widget: "markdown" }
 
   # 📌 Equipos (Equipment) Section
@@ -128,32 +123,11 @@ collections:
           - { label: "Hero Fondo", name: "heroBg", widget: "image" }
           - { label: "Hero Título", name: "heroTitle", widget: "string" }
           - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-          - {
-              label: "Servicios Título",
-              name: "servicesTitle",
-              widget: "string",
-            }
-          - {
-              label: "Servicios Descripción",
-              name: "servicesDescription",
-              widget: "string",
-            }
+          - { label: "Servicios Título", name: "servicesTitle", widget: "string" }
+          - { label: "Servicios Descripción", name: "servicesDescription", widget: "string" }
           - { label: "CTA Título", name: "ctaTitle", widget: "string" }
-          - {
-              label: "CTA Descripción",
-              name: "ctaDescription",
-              widget: "string",
-            }
+          - { label: "CTA Descripción", name: "ctaDescription", widget: "string" }
           - { label: "CTA Botón", name: "ctaButton", widget: "string" }
-          - {
-              label: "Estadísticas",
-              name: "statsItems",
-              widget: "relation",
-              collection: "stats",
-              search_fields: ["label"],
-              value_field: "{{slug}}",
-              multiple: true,
-            }
 
       - file: "content/about.md"
         label: "Página Sobre Nosotros"
@@ -163,36 +137,10 @@ collections:
           - { label: "Hero Título", name: "heroTitle", widget: "string" }
           - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
           - { label: "Historia Título", name: "historyTitle", widget: "string" }
-          - {
-              label: "Historia Contenido",
-              name: "historyContent",
-              widget: "markdown",
-            }
+          - { label: "Historia Contenido", name: "historyContent", widget: "markdown" }
           - { label: "Historia Imagen", name: "historyImage", widget: "image" }
           - { label: "Valores Título", name: "valuesTitle", widget: "string" }
-          - {
-              label: "Valores Descripción",
-              name: "valuesDescription",
-              widget: "string",
-            }
-          - {
-              label: "Valores",
-              name: "valueItems",
-              widget: "relation",
-              collection: "values",
-              search_fields: ["title"],
-              value_field: "{{slug}}",
-              multiple: true,
-            }
-          - {
-              label: "Equipo",
-              name: "teamMembers",
-              widget: "relation",
-              collection: "team",
-              search_fields: ["name"],
-              value_field: "{{slug}}",
-              multiple: true,
-            }
+          - { label: "Valores Descripción", name: "valuesDescription", widget: "string" }
 
       - file: "content/services.md"
         label: "Página Servicios"
@@ -201,44 +149,10 @@ collections:
           - { label: "Hero Fondo", name: "heroBg", widget: "image" }
           - { label: "Hero Título", name: "heroTitle", widget: "string" }
           - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-          - {
-              label: "Servicios Título",
-              name: "servicesTitle",
-              widget: "string",
-            }
-          - {
-              label: "Servicios Contenido",
-              name: "servicesContent",
-              widget: "markdown",
-            }
-          - {
-              label: "Servicios",
-              name: "servicesItems",
-              widget: "relation",
-              collection: "services",
-              search_fields: ["title"],
-              value_field: "{{slug}}",
-              multiple: true,
-            }
-          - {
-              label: "Equipo Título",
-              name: "equipmentTitle",
-              widget: "string",
-            }
-          - {
-              label: "Equipo Contenido",
-              name: "equipmentContent",
-              widget: "markdown",
-            }
-          - {
-              label: "Equipo",
-              name: "equipmentItems",
-              widget: "relation",
-              collection: "equipment",
-              search_fields: ["title"],
-              value_field: "{{slug}}",
-              multiple: true,
-            }
+          - { label: "Servicios Título", name: "servicesTitle", widget: "string" }
+          - { label: "Servicios Contenido", name: "servicesContent", widget: "markdown" }
+          - { label: "Equipo Título", name: "equipmentTitle", widget: "string" }
+          - { label: "Equipo Contenido", name: "equipmentContent", widget: "markdown" }
 
       - file: "content/projects.md"
         label: "Página Proyectos"
@@ -247,25 +161,8 @@ collections:
           - { label: "Hero Fondo", name: "heroBg", widget: "image" }
           - { label: "Hero Título", name: "heroTitle", widget: "string" }
           - { label: "Hero Subtítulo", name: "heroSubtitle", widget: "string" }
-          - {
-              label: "Proyectos Título",
-              name: "projectsTitle",
-              widget: "string",
-            }
-          - {
-              label: "Proyectos Contenido",
-              name: "projectsContent",
-              widget: "markdown",
-            }
-          - {
-              label: "Proyectos",
-              name: "projectsItems",
-              widget: "relation",
-              collection: "projects",
-              search_fields: ["title"],
-              value_field: "{{slug}}",
-              multiple: true,
-            }
+          - { label: "Proyectos Título", name: "projectsTitle", widget: "string" }
+          - { label: "Proyectos Contenido", name: "projectsContent", widget: "markdown" }
 
       - file: "content/contact.md"
         label: "Contacto"
@@ -283,12 +180,3 @@ collections:
           - { label: "Facebook Link", name: "facebook", widget: "string" }
           - { label: "LinkedIn Link", name: "linkedin", widget: "string" }
           - { label: "Youtube Link", name: "youtube", widget: "string" }
-          - {
-              label: "FAQs",
-              name: "faqItems",
-              widget: "relation",
-              collection: "faqs",
-              search_fields: ["question"],
-              value_field: "{{slug}}",
-              multiple: true,
-            }

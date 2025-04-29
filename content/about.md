@@ -18,10 +18,4 @@ historyContent: >-
 historyImage: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790474/dji_0093_piavcq.jpg
 valuesTitle: Nuestros Valores
 valuesDescription: Los principios que nos definen y guían nuestro trabajo
-valueItems:
-  - cumplimiento_efectivo
-  - exito_en_resultados
-  - propuestas_innovadoras
-teamMembers:
-  - orlando_real
 ---
