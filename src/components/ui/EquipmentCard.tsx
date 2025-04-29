@@ -22,13 +22,13 @@ export default function EquipmentCard({ equipment }: EquipmentCardProps) {
   return (
     <motion.div
       variants={item}
-      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow grid md:grid-cols-2 gap-6 items-center">
+      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow grid md:grid-cols-2 md:gap-6 items-center">
       <div className="relative h-64 w-full">
         <Image
           src={equipment.image}
           alt={equipment.title}
           fill
-          className="object-cover transition-transform duration-500"
+          className="object-cover transition-transform duration-500 aspect-video"
         />
       </div>
       <div className="p-6">

@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       variants={item}
-      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group h-min">
       <div className="relative h-60 w-full">
         <Image
           src={project.image}
@@ -67,7 +67,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.location}
           </span>
         </p>
-        <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
+        <p className="text-gray-600 mb-4">{project.description}</p>
         <div className="pt-4 border-t border-gray-100">
           <a
             href={`/projects/${project.filename}`}

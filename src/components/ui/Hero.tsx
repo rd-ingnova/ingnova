@@ -34,8 +34,8 @@ export default function Hero({
       </div>
 
       {/* Contenido */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-20">
-        <div className={`flex flex-col ${contentAlignment[alignment]} max-w-3xl mx-auto`}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-20 pt-24">
+        <div className={`flex flex-col ${contentAlignment[alignment]} max-w-6xl mx-auto`}>
           <motion.h1
             className="text-white mb-4"
             initial={{ opacity: 0, y: 20 }}

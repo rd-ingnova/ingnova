@@ -73,11 +73,11 @@ export default async function ServicePage({ params }: ServiceParams) {
                       />
                     </div>
                   )}
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 text-primary-700">{service.title}</h3>
+                  <div className="p-6 flex flex-col justify-between h-full">
+                    <h3 className="text-xl font-bold mb-2 text-primary-700">{service.title}</h3>
                     <p className="text-gray-600 mb-4 line-clamp-2">{service.excerpt}</p>
                     <a
-                      href={`/services/${service.slug}`}
+                      href={`/services/${service.filename}`}
                       className="text-primary-600 font-medium hover:text-primary-800 flex items-center">
                       Ver más
                       <svg
