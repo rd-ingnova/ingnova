@@ -16,8 +16,8 @@ export default function ServicesPage() {
   if (!markdown) return null;
 
   const { data } = markdown;
-  const services = getArrayMarkups(data.servicesItems, '/content/services');
-  const equipment = getArrayMarkups(data.equipmentItems, '/content/equipment');
+  const services = getArrayMarkups('/content/services');
+  const equipment = getArrayMarkups('/content/equipment');
 
   return (
     <>

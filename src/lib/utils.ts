@@ -7,7 +7,9 @@ export interface MarkupData {
   data: Record<string, any>;
 }
 
-export const getFolderMarkups = (directory: string): matter.GrayMatterFile<string>[] | null => {
+const getFolderMarkups = (
+  directory: string
+): (matter.GrayMatterFile<string> & { filename: string })[] | null => {
   /* Converts all files in a directory to gray-matter objects */
   try {
     const directoryPath = path.join(process.cwd(), directory);
@@ -15,7 +17,7 @@ export const getFolderMarkups = (directory: string): matter.GrayMatterFile<strin
 
     return files.map((filename) => {
       const filePath = path.join(directoryPath, filename);
-      const data = matter.read(filePath);
+      const data = { ...matter.read(filePath), filename };
       return data;
     });
   } catch (error) {
@@ -37,31 +39,22 @@ export const getMarkup = (
   }
 };
 
-export const getArrayMarkups = (array: any, directory: string) => {
-  /* Converts an array of filenames to gray-matter objects */
-  return array.map((filename: string) => {
-    let data = getMarkup(directory, `${filename}.md`)?.data;
-    if (!data) return null;
-    data.filename = filename;
+export const getArrayMarkups = (directory: string) => {
+  /* Converts all files in a directory to gray-matter objects and returns the data property */
+  const array = getFolderMarkups(directory);
+  if (!array) return [];
+
+  return array.map((content: Record<string, any>) => {
+    const { data, filename } = content;
+    data.filename = filename.replace('.md', '');
     return data;
   });
 };
 
-export const getRelatedContent = (currentSlug: string, type: string, limit: number = 3) => {
-  /* Fetches related content based on the current slug and type (e.g., 'projects', 'services') */
-  const markdown = getMarkup('/content', `${type}.md`);
-  if (!markdown) return [];
-
-  const content = markdown.data[`${type}Items`] || markdown.data[type] || [];
-
-  // Get data for all content except the current one
-  const allContent = content
-    .map((filename: string) => {
-      const contentData = getMarkup(`/content/${type}`, `${filename}.md`)?.data;
-      return contentData ? { ...contentData, slug: filename } : null;
-    })
-    .filter((content: any) => content && content.slug !== currentSlug);
-
-  // Return a limited number of related content
-  return allContent.sort(() => 0.5 - Math.random()).slice(0, limit);
+export const getRelatedContent = (filename: string, directory: string, limit: number = 3) => {
+  /* Fetches related content based on the current filename and directory */
+  return getArrayMarkups(directory)
+    .filter((data: Record<string, any>) => data && data.filename !== filename)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, limit);
 };

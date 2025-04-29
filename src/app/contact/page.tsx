@@ -15,7 +15,7 @@ export default function ContactPage() {
   if (!markdown) return null;
 
   const { data } = markdown;
-  const faqs = getArrayMarkups(data.faqItems, '/content/faqs');
+  const faqs = getArrayMarkups('/content/faqs');
 
   return (
     <>

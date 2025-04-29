@@ -15,7 +15,7 @@ export default function ProjectsPage() {
   if (!markdown) return null;
 
   const { data } = markdown;
-  const projects = getArrayMarkups(data.projectsItems, '/content/projects');
+  const projects = getArrayMarkups('/content/projects');
 
   return (
     <>

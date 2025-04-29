@@ -94,7 +94,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {getRelatedContent(resolvedParams.project, 'projects').map(
+            {getRelatedContent(resolvedParams.project, '/content/projects').map(
               (project: any, index: number) => (
                 <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                   {project.image && (

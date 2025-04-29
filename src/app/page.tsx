@@ -15,8 +15,8 @@ export default function Home() {
   if (!markdown || !services_markdown) return null;
 
   const { data } = markdown;
-  const stats = getArrayMarkups(data.statsItems, '/content/stats');
-  const services = getArrayMarkups(services_markdown.data.servicesItems, '/content/services');
+  const stats = getArrayMarkups('/content/stats');
+  const services = getArrayMarkups('/content/services');
 
   return (
     <>

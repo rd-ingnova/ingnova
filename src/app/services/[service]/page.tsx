@@ -61,7 +61,7 @@ export default async function ServicePage({ params }: ServiceParams) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* We'll fetch and display related services here */}
-            {getRelatedContent(resolvedParams.service, 'services').map(
+            {getRelatedContent(resolvedParams.service, '/content/services').map(
               (service: any, index: any) => (
                 <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                   {service.coverImage && (

@@ -15,8 +15,8 @@ export default function AboutPage() {
   if (!markdown) return null;
 
   const { data } = markdown;
-  const values = getArrayMarkups(data.valueItems, '/content/values');
-  const team = getArrayMarkups(data.teamMembers, '/content/team');
+  const values = getArrayMarkups('/content/values');
+  const team = getArrayMarkups('/content/team');
 
   return (
     <>
