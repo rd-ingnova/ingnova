@@ -1,6 +1,6 @@
 ---
 heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1742790474/dji_fly_20250218_155336_973_1739912492886_photo_ajspb0.jpg
-heroTitle: INGNOVA Ingeniería Especializada SAS
+heroTitle: INGNOVA INGENIERÍA ESPECIALIZADA SAS
 heroSubtitle: Fundada en 2022, es una empresa respaldada por un equipo de
   profesionales con más de 20 años de experiencia en la dirección y ejecución de
   proyectos de alta ingeniería a nivel nacional. Nos especializamos en ofrecer

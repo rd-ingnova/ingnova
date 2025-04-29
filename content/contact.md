@@ -1,5 +1,5 @@
 ---
-heroBg: https://images.unsplash.com/photo-1541888946425-d81bb19240f5
+heroBg: https://res.cloudinary.com/dtlfttst9/image/upload/v1742791434/dji_0997_f0arxe.jpg
 heroTitle: Contacto
 heroSubtitle: Estamos aquí para ayudarte con tu próximo proyecto
 description: "Completa el formulario y para ponerte en contacto con nuestro
