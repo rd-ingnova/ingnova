@@ -38,6 +38,7 @@ export default async function ServicePage({ params }: ServiceParams) {
         subtitle={data.description}
         imageUrl={data.image}
         alignment="center"
+        topMargin={true}
       />
 
       <section className="section bg-white">

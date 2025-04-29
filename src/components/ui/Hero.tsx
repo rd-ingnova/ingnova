@@ -9,6 +9,7 @@ interface HeroProps {
   alignment?: 'left' | 'center' | 'right';
   ctaButton?: { text: string; url: string };
   secondaryButton?: { text: string; url: string };
+  topMargin?: boolean;
 }
 
 export default function Hero({
@@ -18,6 +19,7 @@ export default function Hero({
   alignment = 'left',
   ctaButton,
   secondaryButton,
+  topMargin = false,
 }: HeroProps) {
   const contentAlignment = {
     left: 'text-left items-start',
@@ -34,7 +36,10 @@ export default function Hero({
       </div>
 
       {/* Contenido */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-20 pt-24">
+      <div
+        className={`container mx-auto px-4 md:px-6 lg:px-8 relative z-20 ${
+          topMargin ? 'pt-16' : 'pt-8'
+        }`}>
         <div className={`flex flex-col ${contentAlignment[alignment]} max-w-6xl mx-auto`}>
           <motion.h1
             className="text-white mb-4"
