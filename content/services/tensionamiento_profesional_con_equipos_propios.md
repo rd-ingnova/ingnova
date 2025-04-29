@@ -3,7 +3,7 @@ title: TENSIONAMIENTO PROFESIONAL CON EQUIPOS PROPIOS
 description: Servicio de tensionamiento postensado con equipos propios, operados
   por personal especializado para garantizar precisión, seguridad y cumplimiento
   técnico.
-icon: INGNOVA
+icon: ⚙️
 image: https://res.cloudinary.com/dtlfttst9/image/upload/v1745848991/WhatsApp_Image_2025-04-28_at_9.02.51_AM_j2c0eh.jpg
 featured: true
 ---
