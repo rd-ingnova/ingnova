@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant hocus (&:hover, &:focus);
 
@@ -27,8 +27,8 @@
   --color-secondary-900: #663300;
   --color-secondary-950: #4d1f00;
 
-  --font-sans: "Inter", sans-serif;
-  --font-heading: "Montserrat", sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
 }
 
 :root {
@@ -40,11 +40,7 @@
 @layer base {
   body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgb(var(--background-end-rgb))
-      )
+    background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
       rgb(var(--background-start-rgb));
   }
 

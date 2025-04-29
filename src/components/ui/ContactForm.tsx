@@ -1,12 +1,16 @@
-"use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+'use client';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const ContactForm = ({ email }: any) => {
+interface ContactFormProps {
+  email: string;
+}
+
+export default function ContactForm({ email }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    nombre: "",
-    asunto: "",
-    mensaje: "",
+    nombre: '',
+    asunto: '',
+    mensaje: '',
   });
 
   const handleChange = (e: any) => {
@@ -23,7 +27,7 @@ const ContactForm = ({ email }: any) => {
     // Create email subject and body with form data
     const emailSubject = formData.asunto
       ? formData.asunto
-      : "Consulta desde formulario de contacto";
+      : 'Consulta desde formulario de contacto';
 
     const emailBody = `
       Nombre: ${formData.nombre}
@@ -46,13 +50,9 @@ const ContactForm = ({ email }: any) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="space-y-6"
-      onSubmit={handleSubmit}
-    >
+      onSubmit={handleSubmit}>
       <div>
-        <label
-          htmlFor="nombre"
-          className="block text-sm font-medium text-gray-700 mb-1"
-        >
+        <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
           Nombre
         </label>
         <input
@@ -67,10 +67,7 @@ const ContactForm = ({ email }: any) => {
       </div>
 
       <div>
-        <label
-          htmlFor="asunto"
-          className="block text-sm font-medium text-gray-700 mb-1"
-        >
+        <label htmlFor="asunto" className="block text-sm font-medium text-gray-700 mb-1">
           Asunto
         </label>
         <select
@@ -78,28 +75,18 @@ const ContactForm = ({ email }: any) => {
           name="asunto"
           value={formData.asunto}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-        >
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
           <option value="">Selecciona una opción</option>
           <option value="Consulta General">Consulta General</option>
-          <option value="Solicitud de Presupuesto">
-            Solicitud de Presupuesto
-          </option>
-          <option value="Información sobre Proyecto">
-            Información sobre Proyecto
-          </option>
-          <option value="Propuesta de Colaboración">
-            Propuesta de Colaboración
-          </option>
+          <option value="Solicitud de Presupuesto">Solicitud de Presupuesto</option>
+          <option value="Información sobre Proyecto">Información sobre Proyecto</option>
+          <option value="Propuesta de Colaboración">Propuesta de Colaboración</option>
           <option value="Otro">Otro</option>
         </select>
       </div>
 
       <div>
-        <label
-          htmlFor="mensaje"
-          className="block text-sm font-medium text-gray-700 mb-1"
-        >
+        <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-1">
           Mensaje
         </label>
         <textarea
@@ -109,20 +96,16 @@ const ContactForm = ({ email }: any) => {
           value={formData.mensaje}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-        ></textarea>
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"></textarea>
       </div>
 
       <div>
         <button
           type="submit"
-          className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors"
-        >
+          className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors">
           Enviar Mensaje
         </button>
       </div>
     </motion.form>
   );
-};
-
-export default ContactForm;
+}

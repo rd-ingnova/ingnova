@@ -1,12 +1,11 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { FaChevronDown } from "react-icons/fa";
-import { MarkupData } from "@/lib/utils";
+'use client';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { FaChevronDown } from 'react-icons/fa';
+import { MarkupData } from '@/lib/utils';
 
-const HomeHero: React.FC<MarkupData> = ({ data }) => {
+export default function HomeHero({ data }: MarkupData) {
   return (
     <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Imagen de fondo con overlay */}
@@ -28,8 +27,7 @@ const HomeHero: React.FC<MarkupData> = ({ data }) => {
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
+            transition={{ duration: 0.7 }}>
             {data.heroTitle}
           </motion.h1>
 
@@ -37,8 +35,7 @@ const HomeHero: React.FC<MarkupData> = ({ data }) => {
             className="text-sm md:text-xl text-white/90 mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+            transition={{ duration: 0.7, delay: 0.2 }}>
             {data.heroSubtitle}
           </motion.p>
 
@@ -46,18 +43,15 @@ const HomeHero: React.FC<MarkupData> = ({ data }) => {
             className="flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
+            transition={{ duration: 0.7, delay: 0.4 }}>
             <Link
               href="/services"
-              className="btn btn-primary bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-            >
+              className="btn btn-primary bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
               Ver Servicios
             </Link>
             <Link
               href="/contact"
-              className="btn bg-transparent border-2 border-white text-white hover:bg-white/10 px-6 py-3 rounded-lg font-medium transition-colors"
-            >
+              className="btn bg-transparent border-2 border-white text-white hover:bg-white/10 px-6 py-3 rounded-lg font-medium transition-colors">
               Contáctanos
             </Link>
           </motion.div>
@@ -69,12 +63,9 @@ const HomeHero: React.FC<MarkupData> = ({ data }) => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
         initial={{ opacity: 1 }}
         animate={{ opacity: [1, 0, 1], y: [0, 10, 0] }}
-        transition={{ duration: 1.5, delay: 1, repeat: Infinity }}
-      >
+        transition={{ duration: 1.5, delay: 1, repeat: Infinity }}>
         <FaChevronDown size={30} className="text-white" />
       </motion.div>
     </section>
   );
-};
-
-export default HomeHero;
+}
