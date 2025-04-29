@@ -38,7 +38,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold mb-3 text-primary-800">{service.title}</h3>
-        <p className="text-gray-600">{service.description}</p>
+        <p className="text-gray-600 line-clamp-2">{service.description}</p>
         <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
           <a
             href={`/services/${service.filename}`}
