@@ -1,8 +1,6 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { createSlug } from "@/lib/slug";
+'use client';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export interface ProjectProps {
   title: string;
@@ -10,6 +8,7 @@ export interface ProjectProps {
   description: string;
   image: string;
   location: string;
+  filename: string;
 }
 
 interface ProjectCardProps {
@@ -21,12 +20,11 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       variants={item}
-      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
-    >
+      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
       <div className="relative h-60 w-full">
         <Image
           src={project.image}
@@ -43,9 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </div>
       <div className="p-6">
         <div className="flex justify-between items-center mb-2">
-          <h3 className="text-xl font-bold text-primary-800">
-            {project.title}
-          </h3>
+          <h3 className="text-xl font-bold text-primary-800">{project.title}</h3>
         </div>
         <p className="text-sm text-gray-500 mb-3">
           <span className="inline-flex items-center">
@@ -54,8 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               className="h-4 w-4 mr-1"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -75,17 +70,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
         <div className="pt-4 border-t border-gray-100">
           <a
-            href={`/projects/${createSlug(project.title)}`}
-            className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center"
-          >
+            href={`/projects/${project.filename}`}
+            className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center">
             Ver detalles
             <span className="sr-only">sobre {project.title}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-1"
               viewBox="0 0 20 20"
-              fill="currentColor"
-            >
+              fill="currentColor">
               <path
                 fillRule="evenodd"
                 d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
@@ -97,6 +90,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </div>
     </motion.div>
   );
-};
-
-export default ProjectCard;
+}

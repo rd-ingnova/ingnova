@@ -1,13 +1,13 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { createSlug } from "@/lib/slug";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export interface EquipmentProps {
   title: string;
   image: string;
   description: string;
+  filename: string;
 }
 
 interface EquipmentCardProps {
@@ -19,12 +19,11 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const EquipmentCard: React.FC<EquipmentCardProps> = ({ equipment }) => {
+export default function EquipmentCard({ equipment }: EquipmentCardProps) {
   return (
     <motion.div
       variants={item}
-      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow grid md:grid-cols-2 gap-6 items-center"
-    >
+      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow grid md:grid-cols-2 gap-6 items-center">
       <div className="relative h-64 w-full">
         <Image
           src={equipment.image}
@@ -34,24 +33,18 @@ const EquipmentCard: React.FC<EquipmentCardProps> = ({ equipment }) => {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-4 text-primary-800">
-          {equipment.title}
-        </h3>
-        <p className="text-gray-600 mb-4 line-clamp-3">
-          {equipment.description}
-        </p>
+        <h3 className="text-2xl font-bold mb-4 text-primary-800">{equipment.title}</h3>
+        <p className="text-gray-600 mb-4 line-clamp-3">{equipment.description}</p>
         <div className="mt-4 flex justify-between items-center">
           <a
-            href={`/equipment/${createSlug(equipment.title)}`}
-            className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center"
-          >
+            href={`/equipment/${equipment.filename}`}
+            className="text-primary-600 font-medium hover:text-primary-800 transition-colors flex items-center">
             Más información
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-1"
               viewBox="0 0 20 20"
-              fill="currentColor"
-            >
+              fill="currentColor">
               <path
                 fillRule="evenodd"
                 d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
@@ -63,6 +56,4 @@ const EquipmentCard: React.FC<EquipmentCardProps> = ({ equipment }) => {
       </div>
     </motion.div>
   );
-};
-
-export default EquipmentCard;
+}

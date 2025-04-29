@@ -1,28 +1,20 @@
-import { Metadata } from "next";
-import Hero from "@/components/ui/Hero";
-import { getMarkup } from "@/lib/utils";
-import MarkdownRaw from "@/components/ui/MarkdownRaw";
+import { Metadata } from 'next';
+import Hero from '@/components/ui/Hero';
+import { getMarkup, getRelatedContent } from '@/lib/utils';
+import MarkdownRaw from '@/components/ui/MarkdownRaw';
 
 type ProjectParams = {
-  params: Promise<{
-    project: string;
-  }>;
+  params: Promise<{ project: string }>;
 };
 
-export async function generateMetadata({
-  params,
-}: ProjectParams): Promise<Metadata> {
+export async function generateMetadata({ params }: ProjectParams): Promise<Metadata> {
   const resolvedParams = await params;
-  const projectData = getMarkup(
-    "/content/projects",
-    `${resolvedParams.project}.md`
-  )?.data;
+  const projectData = getMarkup('/content/projects', `${resolvedParams.project}.md`)?.data;
 
   if (!projectData) {
     return {
-      title: "Proyecto no encontrado | INGNOVA",
-      description:
-        "El proyecto solicitado no existe o no está disponible actualmente.",
+      title: 'Proyecto no encontrado | INGNOVA',
+      description: 'El proyecto solicitado no existe o no está disponible actualmente.',
     };
   }
 
@@ -34,13 +26,10 @@ export async function generateMetadata({
 
 export default async function ProjectPage({ params }: ProjectParams) {
   const resolvedParams = await params;
-  const project_md = getMarkup(
-    "/content/projects",
-    `${resolvedParams.project}.md`
-  );
+  const markdown = getMarkup('/content/projects', `${resolvedParams.project}.md`);
+  if (!markdown) return null;
 
-  if (!project_md) return null;
-  const { data, content } = project_md;
+  const { data, content } = markdown;
 
   return (
     <>
@@ -55,9 +44,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold mb-6 text-primary-800">
-                Detalles del Proyecto
-              </h2>
+              <h2 className="text-3xl font-bold mb-6 text-primary-800">Detalles del Proyecto</h2>
 
               <MarkdownRaw className="lg:text-lg">{content}</MarkdownRaw>
             </div>
@@ -88,8 +75,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
                   <div className="pt-4 mt-4 border-t border-gray-200">
                     <a
                       href="/contact"
-                      className="block w-full py-3 px-4 bg-primary-600 text-white text-center rounded-lg hover:bg-primary-700 transition"
-                    >
+                      className="block w-full py-3 px-4 bg-primary-600 text-white text-center rounded-lg hover:bg-primary-700 transition">
                       Consultar sobre este proyecto
                     </a>
                   </div>
@@ -108,12 +94,9 @@ export default async function ProjectPage({ params }: ProjectParams) {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {getRelatedProjects(resolvedParams.project).map(
+            {getRelatedContent(resolvedParams.project, 'projects').map(
               (project: any, index: number) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-lg shadow-md overflow-hidden"
-                >
+                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                   {project.image && (
                     <div className="aspect-video overflow-hidden">
                       <img
@@ -124,19 +107,12 @@ export default async function ProjectPage({ params }: ProjectParams) {
                     </div>
                   )}
                   <div className="p-6">
-                    <div className="text-sm text-primary-600 mb-2">
-                      {project.category}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2 text-primary-700">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2">
-                      {project.description}
-                    </p>
+                    <div className="text-sm text-primary-600 mb-2">{project.category}</div>
+                    <h3 className="text-xl font-semibold mb-2 text-primary-700">{project.title}</h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
                     <a
                       href={`/projects/${project.slug}`}
-                      className="text-primary-600 font-medium hover:text-primary-800"
-                    >
+                      className="text-primary-600 font-medium hover:text-primary-800">
                       Ver detalles →
                     </a>
                   </div>
@@ -150,50 +126,16 @@ export default async function ProjectPage({ params }: ProjectParams) {
       {/* CTA */}
       <section className="section bg-primary-900 text-white">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            ¿Necesita un proyecto similar?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">¿Necesita un proyecto similar?</h2>
           <p className="max-w-2xl mx-auto mb-8">
-            Contamos con la experiencia y capacidad para desarrollar proyectos
-            adaptados a sus necesidades específicas. Nuestro equipo está listo
-            para asesorarle.
+            Contamos con la experiencia y capacidad para desarrollar proyectos adaptados a sus
+            necesidades específicas. Nuestro equipo está listo para asesorarle.
           </p>
-          <a
-            href="/contact"
-            className="btn bg-white text-primary-900 hover:bg-gray-100"
-          >
+          <a href="/contact" className="btn bg-white text-primary-900 hover:bg-gray-100">
             Solicitar Consulta
           </a>
         </div>
       </section>
     </>
   );
-}
-
-// Helper function to get related projects
-function getRelatedProjects(currentProjectSlug: string, limit: number = 3) {
-  const projects_md = getMarkup("/content", "projects.md");
-  if (!projects_md) return [];
-
-  const projectsItems = projects_md.data.projectsItems || [];
-
-  // Get project data for all projects except the current one
-  const allProjects = projectsItems
-    .map((filename: string) => {
-      const projectData = getMarkup(
-        "/content/projects",
-        `${filename}.md`
-      )?.data;
-      if (projectData) {
-        return {
-          ...projectData,
-          slug: filename,
-        };
-      }
-      return null;
-    })
-    .filter((project: any) => project && project.slug !== currentProjectSlug);
-
-  // Return a limited number of other projects
-  return allProjects.sort(() => 0.5 - Math.random()).slice(0, limit);
 }

@@ -1,28 +1,22 @@
-import { Metadata } from "next";
-import Image from "next/image";
-import { getMarkup } from "@/lib/utils";
-import MarkdownRaw from "@/components/ui/MarkdownRaw";
-import Hero from "@/components/ui/Hero";
+import { Metadata } from 'next';
+import Image from 'next/image';
+import { getArrayMarkups, getMarkup } from '@/lib/utils';
+import MarkdownRaw from '@/components/ui/MarkdownRaw';
+import Hero from '@/components/ui/Hero';
 
 export const metadata: Metadata = {
-  title: "Sobre Nosotros | INGNOVA",
+  title: 'Sobre Nosotros | INGNOVA',
   description:
-    "Conoce la historia, equipo y visión de INGNOVA - Ingeniería Especializada. Empresa líder en servicios de ingeniería y consultoría.",
+    'Conoce la historia, equipo y visión de INGNOVA - Ingeniería Especializada. Empresa líder en servicios de ingeniería y consultoría.',
 };
 
 export default function AboutPage() {
-  const about_md = getMarkup("/content", "about.md");
+  const markdown = getMarkup('/content', 'about.md');
+  if (!markdown) return null;
 
-  if (!about_md) return null;
-  const { data } = about_md;
-
-  const values = data.valueItems.map(
-    (filename: string) => getMarkup("/content/values", `${filename}.md`)?.data
-  );
-
-  const team = data.teamMembers.map(
-    (filename: string) => getMarkup("/content/team", `${filename}.md`)?.data
-  );
+  const { data } = markdown;
+  const values = getArrayMarkups(data.valueItems, '/content/values');
+  const team = getArrayMarkups(data.teamMembers, '/content/team');
 
   return (
     <>
@@ -38,12 +32,8 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-primary-800">
-                {data.historyTitle}
-              </h2>
-              <MarkdownRaw className="text-gray-700">
-                {data.historyContent}
-              </MarkdownRaw>
+              <h2 className="text-3xl font-bold mb-6 text-primary-800">{data.historyTitle}</h2>
+              <MarkdownRaw className="text-gray-700">{data.historyContent}</MarkdownRaw>
             </div>
             <div className="relative h-96 rounded-xl overflow-hidden">
               <Image
@@ -61,24 +51,17 @@ export default function AboutPage() {
       <section className="section bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-primary-800">
-              {data.valuesTitle}
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              {data.valuesDescription}
-            </p>
+            <h2 className="text-3xl font-bold mb-4 text-primary-800">{data.valuesTitle}</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">{data.valuesDescription}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value: any, index: number) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-              >
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="select-none text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-primary-700">
-                  {value.title}
-                </h3>
+                <h3 className="text-xl font-bold mb-2 text-primary-700">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
@@ -90,12 +73,9 @@ export default function AboutPage() {
       <section className="section bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-primary-800">
-              Nuestro Equipo
-            </h2>
+            <h2 className="text-3xl font-bold mb-4 text-primary-800">Nuestro Equipo</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Contamos con profesionales altamente cualificados en diversas
-              áreas de la ingeniería.
+              Contamos con profesionales altamente cualificados en diversas áreas de la ingeniería.
             </p>
           </div>
 
@@ -104,9 +84,8 @@ export default function AboutPage() {
               <div
                 key={index}
                 className={`flex flex-col md:flex-row gap-8 items-center ${
-                  index % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
-              >
+                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                }`}>
                 <div className="w-full md:w-1/3">
                   <div className="relative mx-8 md:mx-0 aspect-square rounded-xl overflow-hidden group">
                     <Image
@@ -119,15 +98,9 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="px-8 w-full md:w-2/3">
-                  <h3 className="text-2xl font-bold mb-2 text-primary-700">
-                    {member.name}
-                  </h3>
-                  <p className="text-lg text-primary-600 mb-4">
-                    {member.position}
-                  </p>
-                  <MarkdownRaw className="text-gray-700">
-                    {member.bio}
-                  </MarkdownRaw>
+                  <h3 className="text-2xl font-bold mb-2 text-primary-700">{member.name}</h3>
+                  <p className="text-lg text-primary-600 mb-4">{member.position}</p>
+                  <MarkdownRaw className="text-gray-700">{member.bio}</MarkdownRaw>
                 </div>
               </div>
             ))}
