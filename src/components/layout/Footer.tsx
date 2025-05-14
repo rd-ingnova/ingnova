@@ -2,12 +2,12 @@
 import { MarkupData } from '@/lib/utils';
 import Link from 'next/link';
 import {
-  FaFacebook,
-  FaLinkedin,
-  FaInstagram,
-  FaPhoneAlt,
   FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
   FaMapMarkerAlt,
+  FaPhoneAlt,
   FaYoutube,
 } from 'react-icons/fa';
 
@@ -28,22 +28,10 @@ export default function Footer({ data }: MarkupData) {
 
             <div className="flex space-x-4">
               {[
-                {
-                  icon: <FaFacebook size={20} />,
-                  href: data.facebook,
-                },
-                {
-                  icon: <FaLinkedin size={20} />,
-                  href: data.linkedin,
-                },
-                {
-                  icon: <FaInstagram size={20} />,
-                  href: data.instagram,
-                },
-                {
-                  icon: <FaYoutube size={20} />,
-                  href: data.youtube,
-                },
+                { icon: <FaFacebook size={20} />, href: data.facebook },
+                { icon: <FaLinkedin size={20} />, href: data.linkedin },
+                { icon: <FaInstagram size={20} />, href: data.instagram },
+                { icon: <FaYoutube size={20} />, href: data.youtube },
               ].map((link: any) => (
                 <a
                   key={link.href}
@@ -67,6 +55,7 @@ export default function Footer({ data }: MarkupData) {
                 { name: 'Proyectos', href: '/projects' },
                 { name: 'Contacto', href: '/contact' },
                 { name: 'Admin', href: '/admin' },
+                { name: 'Política de Datos', href: '/politica-de-datos.pdf' },
               ].map((link) => (
                 <div key={link.href} className="flex-shrink-0">
                   <Link

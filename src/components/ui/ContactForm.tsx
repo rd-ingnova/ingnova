@@ -1,24 +1,17 @@
 'use client';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface ContactFormProps {
   email: string;
 }
 
 export default function ContactForm({ email }: ContactFormProps) {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    asunto: '',
-    mensaje: '',
-  });
+  const [formData, setFormData] = useState({ nombre: '', asunto: '', mensaje: '' });
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e: any) => {
@@ -103,7 +96,7 @@ export default function ContactForm({ email }: ContactFormProps) {
         <button
           type="submit"
           className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors">
-          Enviar Mensaje
+          Abrir Correo
         </button>
       </div>
     </motion.form>
