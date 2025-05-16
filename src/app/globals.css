@@ -38,6 +38,10 @@
 }
 
 @layer base {
+  html {
+    font-size: 90%;
+  }
+
   body {
     color: rgb(var(--foreground-rgb));
     background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
